@@ -12,7 +12,10 @@ def my_function(filename):
         sequence_id = seq_record.id
         sequence = repr(seq_record.seq)
         sequence_length = len(seq_record)
-    print(filename + "Lexie" )
+    print(filename)
+    print(sequence_id)
+    print(sequence)
+    print(sequence_length)
 
 for i in dir_list:
     my_function(i)
