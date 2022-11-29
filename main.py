@@ -2,12 +2,17 @@ import csv
 from Bio import SeqIO
 import os
 
-# Get the list of all files and directories
-path = "./sequences"
-dir_list = os.listdir(path)
 
-if os.path.exists("parsed_file.csv"):
-  os.remove("parsed_file.csv")
+def main():
+    # Get the list of all files and directories
+    path = "./sequences"
+    dir_list = os.listdir(path)
+
+    if os.path.exists("parsed_file.csv"):
+        os.remove("parsed_file.csv")
+    
+    for i in dir_list:
+        my_function(i)
  
 
 def my_function(filename):
@@ -31,11 +36,9 @@ def write_to_csv(sequence_id, sequence, sequence_length):
 
 
 
-for i in dir_list:
-    my_function(i)
 
-def main():
-    return
+
+
 
 if __name__ == "__main__":
     main()
