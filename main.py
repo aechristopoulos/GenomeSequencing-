@@ -9,7 +9,7 @@ def main():
     dir_list = os.listdir(path)
 
     data = []
-    headers = ["Sequence ID", "Sequence", "Sequence Length"]
+    headers = ["Sequence ID", "Sequence", "Sequence Length", "Sequence Name", "Sequence Descpription"]
 
     if os.path.exists("parsed_file.csv"):
         os.remove("parsed_file.csv")
@@ -27,8 +27,11 @@ def parse_fasta(filename,rows):
     sequence_id = seq_record.id
     sequence = repr(seq_record.seq)
     sequence_length = len(seq_record)
+    sequence_name = seq_record.name
+    sequence_description = seq_record.description 
 
-    rows.append([sequence_id, sequence, sequence_length])
+
+    rows.append([sequence_id, sequence, sequence_length, sequence_name,sequence_description])
 
 
 def write_to_csv(header, data):
