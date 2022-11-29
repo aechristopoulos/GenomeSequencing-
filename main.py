@@ -3,8 +3,11 @@ from Bio import SeqIO
 import os
 
 # Get the list of all files and directories
-path = ".\sequences"
+path = "./sequences"
 dir_list = os.listdir(path)
+
+if os.path.exists("parsed_file.csv"):
+  os.remove("parsed_file.csv")
  
 
 def my_function(filename):
@@ -16,7 +19,7 @@ def my_function(filename):
     write_to_csv(sequence_id, sequence, sequence_length)
 
 def write_to_csv(sequence_id, sequence, sequence_length):
-    with open(sequence_id + "parsed_file.csv", "w+") as csvfile:
+    with open("parsed_file.csv", "a") as csvfile:
         filewriter = csv.writer(csvfile, delimiter=',',
                              quotechar='|', quoting=csv.QUOTE_MINIMAL)
         filewriter.writerow(['sequence ID', sequence_id])
@@ -31,3 +34,8 @@ def write_to_csv(sequence_id, sequence, sequence_length):
 for i in dir_list:
     my_function(i)
 
+def main():
+    return
+
+if __name__ == "__main__":
+    main()
