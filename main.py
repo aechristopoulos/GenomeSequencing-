@@ -15,15 +15,19 @@ def main():
         os.remove("parsed_file.csv")
     
     for i in dir_list:
-        my_function(i, data)
+        parse_fasta(i, data)
 
     write_to_csv(headers, data)
 
-def my_function(filename,rows):
-    for seq_record in SeqIO.parse("sequences/" + filename, "fasta"):
-        sequence_id = seq_record.id
-        sequence = repr(seq_record.seq)
-        sequence_length = len(seq_record)
+def parse_fasta(filename,rows):
+    record = list(SeqIO.parse("sequences/" + filename, "fasta"))
+
+    seq_record = record[0]
+
+    sequence_id = seq_record.id
+    sequence = repr(seq_record.seq)
+    sequence_length = len(seq_record)
+
     rows.append([sequence_id, sequence, sequence_length])
 
 
