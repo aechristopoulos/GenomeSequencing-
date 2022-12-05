@@ -9,7 +9,7 @@ def main():
     dir_list = os.listdir(path)
 
     data = []
-    headers = ["Sequence ID", "Sequence", "Sequence Length", "Sequence Name", "Sequence Descpription"]
+    headers = ["Sequence ID", "Sequence", "Sequence Length", "Sequence Name", "Sequence"]
 
     if os.path.exists("parsed_file.csv"):
         os.remove("parsed_file.csv")
