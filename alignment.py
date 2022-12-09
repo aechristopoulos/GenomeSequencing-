@@ -17,8 +17,8 @@ from Bio import SeqIO
 victoria_text = list(SeqIO.parse("sequences/A_Victoria_361_2011_H3N2_NS.fasta", "fasta"))[0].seq.lower()
 brisbane_text = list(SeqIO.parse("sequences/A_Brisbane_59_2007_H1N1_NS.fasta", "fasta"))[0].seq.lower()
 
-print(victoria_text)
-print(brisbane_text)
+# print(victoria_text)
+# print(brisbane_text)
 
 victoria_sequence = Seq(victoria_text)
 brisbane_sequence = Seq(brisbane_text)
@@ -44,9 +44,13 @@ alignments = Align.PairwiseAligner().align(victoria_sequence, brisbane_sequence)
 
 
 ###ClustalW alignment 
-cline = ClustalwCommandline("clustalw2", infile="NS_H1_sequences.fa")
-# print(cline)
+cline = ClustalwCommandline("clustalw2", infile="sequences/NS_H9_sequences.fa")
+print(cline)
+
+stdout, stderr = cline()
+
 
 from Bio import AlignIO
-align = AlignIO.read(victoria_sequence, brisbane_sequence, "clustal")
+align = AlignIO.read("sequences/NS_H9_sequences.aln", "clustal")
 print(align)
+
