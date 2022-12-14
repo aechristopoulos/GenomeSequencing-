@@ -7,7 +7,23 @@ from Bio import AlignIO
 # print(cline)
 
 
-muscle_cline = MuscleCommandline(input="sequences/NS_H9_sequences.fa")
-stdout, stderr = muscle_cline()
-align = AlignIO.read(StringIO(stdout), "fasta")
-print(align)
+# muscle_cline = MuscleCommandline(input="NS_H9_sequences.fa", out= "aln.afa")
+# stdout, stderr = muscle_cline()
+# align = AlignIO.read(StringIO(stdout), "fasta")
+# # print(align)
+
+
+# import subprocess
+# result = subprocess.run(['dir'], stdout=subprocess.PIPE, shell = True)
+# print(result.stdout)
+
+# import subprocess
+# result = subprocess.run(['echo', 'hello'], stdout=subprocess.PIPE, shell=True)
+# print(result.stdout)
+
+## Run muscle -align 
+import subprocess
+result = subprocess.run(['muscle', '-align', 'sequences/NS_H9_sequences.fa', '-output', 'aln.afa'], stdout=subprocess.PIPE, shell = True)
+print(result.stdout)
+
+##Open outputfile (-aln.afa)
