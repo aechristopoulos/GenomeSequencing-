@@ -42,13 +42,13 @@ short_b_forward = SeqRecord(Seq(brisbane_foward), id ="A|Brisbane|59|2007|A\ H1N
 description= "A/Brisbane/59/2007(H1N1) segment 8 nonstructural protein (NS) first 200 bps")
 
 short_b_reverse = SeqRecord(Seq(brisbane_reverse), id = "A|Brisbane|59|2007|A\ H1N1|seasonal|NS|8|WSS3272077",
-descripton ="A/Brisbane/59/2007(H1N1) segment 8 nonstructural protein (NS) last 200 bps")
+description= "A/Brisbane/59/2007(H1N1) segment 8 nonstructural protein (NS) last 200 bps")
 
 shortened_forward_example = [short_v_forward, short_b_forward]
 shortened_reverse_example = [short_v_reverse, short_b_reverse]
 
-SeqIO.write(shortened_forward_example, "shortened_forward_example.faa", "fasta")
-SeqIO.write(shortened_reverse_example, "shortened_reverse_example.faa", "fasta")
+SeqIO.write(shortened_forward_example, "shortened_forward_example.fasta", "fasta")
+SeqIO.write(shortened_reverse_example, "shortened_reverse_example.fasta", "fasta")
 
 
 
