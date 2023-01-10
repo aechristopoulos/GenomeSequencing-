@@ -4,6 +4,8 @@ from Bio import pairwise2 #does pairwise alignments
 from Bio.pairwise2 import format_alignment #formats pairwise alignments to be more readable
 from Bio import Align
 from Bio.SeqRecord import SeqRecord
+from Bio.Align.Applications import ClustalwCommandline
+from Bio import AlignIO
 
 
 
@@ -53,18 +55,22 @@ SeqIO.write(shortened_reverse_example, "shortened_reverse_example.fasta", "fasta
 
 
 # ###ClustalW alignment 
-# cline = ClustalwCommandline("clustalw2", infile=)
+# cline = ClustalwCommandline("clustalw2", infile='shortened_forward_example.fasta')
 # print(cline)
 
 # stdout, stderr = cline()
 
-
-# from Bio import AlignIO
-# align = AlignIO.read("sequences/NS_H9_sequences.aln", "clustal")
+# align = AlignIO.read("shortened_forward_example.aln", "clustal")
 # print(align)
 
 
 
+# cline = ClustalwCommandline("clustalw2", infile='shortened_reverse_example.fasta')
+# print(cline)
 
+# stdout, stderr = cline()
+
+# align = AlignIO.read("shortened_reverse_example.aln", "clustal")
+# print(align)
 
 

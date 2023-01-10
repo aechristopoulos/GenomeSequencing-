@@ -1,0 +1,22 @@
+CLUSTAL 2.1 multiple sequence alignment
+
+
+A|Victoria|361|2011|A\      GAAACGGGAAATGGCGAGAACAGCTAGGTCAAAAGTTTGAAGAGATAAGA
+A|Brisbane|59|2007|A\       -----------------GAACAACTAGGTCAGAAGTTTGAAGAAGTAAGA
+                                             ***** ******** ***********  *****
+
+A|Victoria|361|2011|A\      TGGCTAATTGAAGAAGTGAGACACAGATTAAGAACAACTGAAAATAGCTT
+A|Brisbane|59|2007|A\       TGGCTGATTGAAGAAGTGAGGCATAAATTGAAGACGACAGAGAATAGTTT
+                            ***** ************** ** * *** *  ** ** ** ***** **
+
+A|Victoria|361|2011|A\      TGAACAAATAACATTCATGCAAGCATTACAACTGCTGTTTGAAGTAGAAC
+A|Brisbane|59|2007|A\       TGAGCAAATAACATTTATGCAAGCATTACAGCTATTATTTGAAGTGGAAC
+                            *** *********** ************** **  * ******** ****
+
+A|Victoria|361|2011|A\      AGGAGATAAGAACTTTCTCATTTCAGCTTATTTAATGATAAAAAACACCC
+A|Brisbane|59|2007|A\       AAGAGATTAGAACGTTTTCGTTTCAGCTTATTTAGTGATAAAAAACACCC
+                            * ***** ***** ** ** ************** ***************
+
+A|Victoria|361|2011|A\      -----------------
+A|Brisbane|59|2007|A\       TTGTTTCTACTAATAAC
+                                             
