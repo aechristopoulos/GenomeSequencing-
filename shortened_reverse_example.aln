@@ -1,22 +1,27 @@
 CLUSTAL 2.1 multiple sequence alignment
 
 
-A|Victoria|361|2011|A\      GAAACGGGAAATGGCGAGAACAGCTAGGTCAAAAGTTTGAAGAGATAAGA
-A|Brisbane|59|2007|A\       -----------------GAACAACTAGGTCAGAAGTTTGAAGAAGTAAGA
-                                             ***** ******** ***********  *****
+A|Brisbane|59|2007|A\       GAACAACTAGGTCAGAAGTTTGAAGAAGTAAGATGGCTGATTGAAGAAGT
+NS                          --------------------------------------------------
+A|Victoria|361|2011|A\      ----------------GAAACGGGAAATGGCGAGAACAGCTAGGTCAAAA
+                                                                              
 
-A|Victoria|361|2011|A\      TGGCTAATTGAAGAAGTGAGACACAGATTAAGAACAACTGAAAATAGCTT
-A|Brisbane|59|2007|A\       TGGCTGATTGAAGAAGTGAGGCATAAATTGAAGACGACAGAGAATAGTTT
-                            ***** ************** ** * *** *  ** ** ** ***** **
+A|Brisbane|59|2007|A\       GAGGCATAAATTGAAGACGACAGAGAATAGTTTTGAGCAAATAACATTTA
+NS                          --------------------------------------------------
+A|Victoria|361|2011|A\      GTTTGAAGAGATAAGATGGCTAATTGAAGAAGTGAGACACAGATTAAGAA
+                                                                              
 
-A|Victoria|361|2011|A\      TGAACAAATAACATTCATGCAAGCATTACAACTGCTGTTTGAAGTAGAAC
-A|Brisbane|59|2007|A\       TGAGCAAATAACATTTATGCAAGCATTACAGCTATTATTTGAAGTGGAAC
-                            *** *********** ************** **  * ******** ****
+A|Brisbane|59|2007|A\       TGCAAGCATTACAGCTATTATTTGAAGTGGAACAAGAGATTAGAACGTTT
+NS                          --------------------------------------------------
+A|Victoria|361|2011|A\      CAACTGAAAATAGCTTTGAACAAATAACATTCATGCAAGCATTACAACTG
+                                                                              
 
-A|Victoria|361|2011|A\      AGGAGATAAGAACTTTCTCATTTCAGCTTATTTAATGATAAAAAACACCC
-A|Brisbane|59|2007|A\       AAGAGATTAGAACGTTTTCGTTTCAGCTTATTTAGTGATAAAAAACACCC
-                            * ***** ***** ** ** ************** ***************
+A|Brisbane|59|2007|A\       TCGTTTCAGCTTATTTAGTGATAAAAAACACCCTTGTTTCTACTAATAAC
+NS                          --------------------------AACACCCTTGTTTCTACTGATC--
+A|Victoria|361|2011|A\      CTGTTTGAAGTAGAACAGGAGATAAGAACTTTCTCATTTCAGCTTATTTA
+                                                      ***   **  ****  ** **   
 
-A|Victoria|361|2011|A\      -----------------
-A|Brisbane|59|2007|A\       TTGTTTCTACTAATAAC
-                                             
+A|Brisbane|59|2007|A\       ----------------
+NS                          ----------------
+A|Victoria|361|2011|A\      ATGATAAAAAACACCC
+                                            

@@ -46,31 +46,42 @@ description= "A/Brisbane/59/2007(H1N1) segment 8 nonstructural protein (NS) firs
 short_b_reverse = SeqRecord(Seq(brisbane_reverse), id = "A|Brisbane|59|2007|A\ H1N1|seasonal|NS|8|WSS3272077",
 description= "A/Brisbane/59/2007(H1N1) segment 8 nonstructural protein (NS) last 200 bps")
 
-shortened_forward_example = [short_v_forward, short_b_forward]
-shortened_reverse_example = [short_v_reverse, short_b_reverse]
+NS_forward_primer= SeqRecord(Seq("GCAAAAGCAGGGTGACAAA"), id= "NS Forward 1.2", description= "Forward primer")
+NS_reverse_primer= Seq("GATCAGTAGAAACAAGGGTGTT")
+NS_reverse_compliment = Seq(NS_reverse_primer.reverse_complement())
+NS_revcomp_primer= SeqRecord(Seq(NS_reverse_compliment), id= "NS Reverse 1.1", description= "Reverse primer reverse compliment")
+
+
+
+SeqIO.write(NS_forward_primer, "NS_forward_primer.fasta", "fasta")
+SeqIO.write(NS_revcomp_primer, "NS_revcomp_primer.fasta", "fasta")
+
+
+shortened_forward_example = [short_v_forward, short_b_forward, NS_forward_primer]
+shortened_reverse_example = [short_v_reverse, short_b_reverse, NS_revcomp_primer]
 
 SeqIO.write(shortened_forward_example, "shortened_forward_example.fasta", "fasta")
 SeqIO.write(shortened_reverse_example, "shortened_reverse_example.fasta", "fasta")
 
 
 
-# ###ClustalW alignment 
-# cline = ClustalwCommandline("clustalw2", infile='shortened_forward_example.fasta')
-# print(cline)
+###ClustalW alignment 
+cline = ClustalwCommandline("clustalw2", infile='shortened_forward_example.fasta')
+print(cline)
 
-# stdout, stderr = cline()
+stdout, stderr = cline()
 
-# align = AlignIO.read("shortened_forward_example.aln", "clustal")
-# print(align)
+align = AlignIO.read("shortened_forward_example.aln", "clustal")
+print(align)
 
 
 
-# cline = ClustalwCommandline("clustalw2", infile='shortened_reverse_example.fasta')
-# print(cline)
+cline = ClustalwCommandline("clustalw2", infile='shortened_reverse_example.fasta')
+print(cline)
 
-# stdout, stderr = cline()
+stdout, stderr = cline()
 
-# align = AlignIO.read("shortened_reverse_example.aln", "clustal")
-# print(align)
+align = AlignIO.read("shortened_reverse_example.aln", "clustal")
+print(align)
 
 
