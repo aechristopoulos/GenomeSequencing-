@@ -1,0 +1,26 @@
+CLUSTAL 2.1 multiple sequence alignment
+
+
+MF440740        --------------------ATGGATTCCAATACTGTGTCAAGCTTCCAGGTAGACTGCT
+MT875141        --------------------ATGGATTCCAATACTGTGTCAAGCTTCCAGGTAGACTGCT
+MK673900        AGCAGGGTGACAAAAACATAATGGATTCCAACACTGTGTCAAGCTTTCAGGTAGATTGCT
+NS              ------------------------------------------------------------
+                                                                            
+
+MF440740        TTCTTTGGCATGTCCGCAAACGATTTGCAGACCAAGAAATGGGTGATGCCCCATTTCTAG
+MT875141        TTCTTTGGCATGTCCGCAAACGATTTGCAGACCAAGAAATGGGCGATGCCCCATTTCTAG
+MK673900        TTCTTTGGCATGTCCGCAAACGATTTGCAGACCAAGAACTGTGTGATGCCCCATTCCTTG
+NS              -------------------------------GCAAAAGCAGGGTGACAAA----------
+                                                *** *   * * **              
+
+MF440740        ACCGGCTTCGCCGAGATCAGAAGTCCCTGAGAGGAAGAAGCAGCACTCTTGGTCTGGACA
+MT875141        ACCGGCTTCGCCGAGATCAGAAGTCCCTGAGGGGAAGAAGCAGCACCCTTGGTCTAGACA
+MK673900        ACCGGCTTCGCCGAGATCAGAAGTCCTTAAGAGGAAGGAGCAGCACTCTTGGTCTGAATA
+NS              ------------------------------------------------------------
+                                                                            
+
+MF440740        TCAGAACCGCCACGCATGAAGGAAAGCATATAGTGGAGCG
+MT875141        TCAGAACTGCCACGCGTGAAGGAAAGCATATAGTGGAGCG
+MK673900        TCGAGACAGCTACTCGTGCA--------------------
+NS              ----------------------------------------
+                                                        
