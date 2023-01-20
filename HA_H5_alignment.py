@@ -94,8 +94,3 @@ print(align)
 
 
 
-# >MK300699 A/China/Original/2018 2018/11/06 4 (HA)
-# >ON759331 A/Colorado/18/2022 2022/04/20 4 (HA)
-# >OK284451 A/Guangdong/1/2021 2021/08/19 4 (HA)
-# >OL519551 A/Guangdong/lgf/2021 2021/09/19 4 (HA)
-# >OP209769 A/Yangzhou/125/2022 2022/02/26 4 (HA)
