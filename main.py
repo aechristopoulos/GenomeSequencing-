@@ -7,7 +7,7 @@ import custom_types
 
 def main(): 
     segment_information = extract()
-    print(segment_information["HA"])
+    
 
 
 def extract():
@@ -34,10 +34,10 @@ def parse_primers(path, segment):
     return segments
     
 
-def parse_sequences(path, segment):
-    segment_path = path + segment + "/sequences/"
-    segment_folder = os.scandir(segment_path)
-    for entry in segment_folder:
+def parse_sequences(path, sequence):
+    sequence_path = path + sequence + "/sequences/"
+    sequence_folder = os.scandir(sequence_path)
+    for entry in sequence_folder:
         if entry.is_file():
             print(entry.name)
 
