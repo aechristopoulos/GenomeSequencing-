@@ -1,52 +1,16 @@
-import csv 
-from Bio import SeqIO
-import os  
-import alignment_functions
-import os
-import custom_types
+import extract
 
 def main(): 
-    segment_information = extract()
-    
+    segment_information = extract.extract()
+    x = segment_information["HA"].Sequences[0]
+    y = segment_information["HA"].Primers
+    sequence_one = x[0]
+    primer_one = y[0]
+
+    print(x)
+    print(y)
 
 
-def extract():
-    segment_information = {}
-    path = "./db/"
-    db = os.scandir(path)
-    for entry in db: 
-        if entry.is_dir():
-            primer_info = parse_primers(path, entry.name)
-            sequence_info = parse_sequences(path, entry.name)
-            edited_sequence_info = parse_edited_sequences(path, entry.name)
-            segment_information[entry.name] = custom_types.DirectoryInformation(EditedSequences=edited_sequence_info, Primers=primer_info, Sequences=sequence_info)
-    return segment_information        
-
-
-def parse_primers(path, segment):
-    segment_path = path + segment + "/primers/"
-    segment_folder = os.scandir(segment_path)
-    segments = [] 
-    for entry in segment_folder:
-        if entry.is_file():
-            primer_tupple = alignment_functions.create_primer_tupple(segment_path, entry.name)
-            segments.append(primer_tupple)
-    return segments
-    
-
-def parse_sequences(path, sequence):
-    sequence_path = path + sequence + "/sequences/"
-    sequence_folder = os.scandir(sequence_path)
-    for entry in sequence_folder:
-        if entry.is_file():
-            print(entry.name)
-
-def parse_edited_sequences(path, segment):
-    segment_path = path + segment + "/edited_sequences/"
-    segment_folder = os.scandir(segment_path)
-    for entry in segment_folder:
-        if entry.is_file():
-            print(entry.name)
 
 
     
