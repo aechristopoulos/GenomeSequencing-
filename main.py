@@ -1,14 +1,30 @@
 import extract
+import transform
+import load
 
 def main(): 
     segment_information = extract.extract()
-    x = segment_information["HA"].Sequences[0]
+    x = segment_information["HA"].Sequences
     y = segment_information["HA"].Primers
-    sequence_one = x[0]
-    primer_one = y[0]
+    z = segment_information["HA"].EditedSequences[0]
+    forward_edited_sequences, reverse_edited_sequences = transform.sequence_record_objects(z)
+    forward_primers, reverse_primers = transform.primer_record_objects(y)
+    forward_sequences = transform.edited_forward_sequences_fasta("HA", "Edited_forward_HA_H1.fasta", forward_edited_sequences, forward_primers)
+    reverse_sequences = transform.edited_reverse_sequences_fasta("HA", "Edited_reverse_HA_H1.fasta", reverse_edited_sequences, reverse_primers)
+    forward_alignment = load.clustalw_alignment ("HA", "Edited_forward_HA_H1")
+    reverse_alignment = load.clustalw_alignment("HA", "Edited_reverse_HA_H1")
 
-    print(x)
-    print(y)
+
+    x = 1
+
+    
+
+   
+
+
+    
+
+
 
 
 
@@ -27,8 +43,8 @@ def main():
 # #         do_etl(x, primers, sequences)
         
 
-# # def do_etl(segment_name, primers, sequences):
-# #     sequence_to_align_whatever_the_fuck = "HA_H5"
+# def do_etl(segment_name, primers, sequences):
+#     sequence_to_align_whatever_the_fuck = "HA_H5"
 
 #     # Extract
 #     HA_H5_alignment = alignment_functions.extract( sequence_to_align_whatever_the_fuck + "_sequences.fa") 

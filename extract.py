@@ -77,7 +77,7 @@ def parse_sequences(path, sequence):
     return sequences
 
 def parse_edited_sequences(path, edited_sequence):
-    edited_sequence_path = path + edited_sequence + "/edited_sequences/"
+    edited_sequence_path = path + edited_sequence + "/sequences/"
     edited_sequence_folder = os.scandir(edited_sequence_path)
     edited_sequenes = []
     for entry in edited_sequence_folder:
@@ -86,13 +86,15 @@ def parse_edited_sequences(path, edited_sequence):
             edited_sequenes.append(edited_sequence_tupple)
     return edited_sequenes
 
-def print_sequence_record_info(edited_sequence_record_information):
-#For loop for extracting the sequence record information from the transformed sequences, and printing sequence record information for confirmation 
-        for sequences in edited_sequence_record_information:
-                print(f'Sequence ID: {sequences.Id}')
-                print(f'Sequence Description: {sequences.Description}')
-                print(f'Forward Sequence: {sequences.ForwardSequence}')
-                print(f'Reverse Sequence: {sequences.ReverseSequence}')
-                print(f'Forward Sequence Length: {sequences.ForwardSequenceLength}')
-                print(f'Reverse Sequence Length: {sequences.ReverseSequenceLength}') 
-                print()
+    
+
+# def print_sequence_record_info(edited_sequence_record_information):
+# #For loop for extracting the sequence record information from the transformed sequences, and printing sequence record information for confirmation 
+#         for sequences in edited_sequence_record_information:
+#                 print(f'Sequence ID: {sequences.Id}')
+#                 print(f'Sequence Description: {sequences.Description}')
+#                 print(f'Forward Sequence: {sequences.ForwardSequence}')
+#                 print(f'Reverse Sequence: {sequences.ReverseSequence}')
+#                 print(f'Forward Sequence Length: {sequences.ForwardSequenceLength}')
+#                 print(f'Reverse Sequence Length: {sequences.ReverseSequenceLength}') 
+#                 print()
