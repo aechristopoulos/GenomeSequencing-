@@ -15,17 +15,19 @@ def create_primer_tupple(path, filename):
 
 
 def create_sequence_tupple(path, filename): 
+        filename_list = filename.split("_")
         sequence_record = list(SeqIO.parse(path + filename, "fasta"))
 
         sequence_record_information = []
 
         for sequence in sequence_record: 
-                sr = custom_types.SequenceRecordInformation(sequence, len(sequence), sequence.id, sequence.description)
+                sr = custom_types.SequenceRecordInformation(filename_list[0], filename_list[1], sequence, len(sequence), sequence.id, sequence.description)
                 sequence_record_information.append(sr)
         return sequence_record_information
 
 
 def create_edited_sequence_tupple(path, filename):
+        filename_list=filename.split("_")
         segment_hemagglutinin = list(SeqIO.parse(path + filename, "fasta"))
         #For loop for turning the .fa files into a list of sequences that can be transformed  
 
@@ -37,7 +39,7 @@ def create_edited_sequence_tupple(path, filename):
                 # print(len(segment_hemagglutinin_sequence))
                 forward_sequence = segment_hemagglutinin_sequence[0:200]
                 reverse_sequence = segment_hemagglutinin_sequence[-200:]
-                esr = custom_types.EditedSequenceRecordInformation(forward_sequence, reverse_sequence, len(forward_sequence), len(reverse_sequence), sequence.id, sequence.description)
+                esr = custom_types.EditedSequenceRecordInformation(filename_list[0], filename_list[1], forward_sequence, reverse_sequence, len(forward_sequence), len(reverse_sequence), sequence.id, sequence.description)
                 edited_sequence_record_information.append(esr)
         return edited_sequence_record_information
 

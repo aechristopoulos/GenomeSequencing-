@@ -4,7 +4,27 @@ from Bio import Align
 from Bio.SeqRecord import SeqRecord
 from Bio.Align.Applications import ClustalwCommandline
 from Bio import AlignIO
-import custom_types
+import os 
+
+
+def transform(segment_information):
+        path = "./db/"
+        db = os.scandir(path)
+        for entry in db: 
+                if entry.is_dir():
+                        do_transform(segment_information, entry.name)
+
+def do_transform(segment_information, segment):
+        primers = segment_information[segment].Primers
+        sequences = segment_information[segment].EditedSequences
+        forward_primers, reverse_primers = primer_record_objects(primers)
+        for sequence in sequences:
+                forward_edited_sequences, reverse_edited_sequences =sequence_record_objects(sequence)
+
+                forward_sequences = edited_forward_sequences_fasta(segment, f"{segment}_{sequence[0].Strain}_edited_forward.fasta", forward_edited_sequences, forward_primers)
+                reverse_sequences = edited_reverse_sequences_fasta(segment, f"{segment}_{sequence[0].Strain}_edited_reverse.fasta", reverse_edited_sequences, reverse_primers)
+   
+
 
 
 
