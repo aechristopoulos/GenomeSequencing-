@@ -4,8 +4,10 @@ from Bio import SeqIO
 from Bio import Align
 from Bio.SeqRecord import SeqRecord
 from Bio.Align.Applications import ClustalwCommandline
+from Bio.Align.Applications import ClustalOmegaCommandline
 from Bio import AlignIO
-import custom_types
+import subprocess
+import os
 
 
 # # Write forward primers
@@ -24,8 +26,6 @@ import custom_types
 
 
 
-
-
 ###ClustalW alignment 
 def clustalw_alignment(segment, filename):
         cline = ClustalwCommandline("clustalw2", infile= "db/" + segment + "/edited_sequences/" + filename + ".fasta")
@@ -34,7 +34,33 @@ def clustalw_alignment(segment, filename):
 
         align = AlignIO.read("/alignments/" + filename + ".aln", "clustal")
         return align
-        
+
+
+def load(command):
+        path = "./db/"
+        db = os.scandir(path)
+        for entry in db: 
+                if entry.is_dir():
+                        run_command(command, entry.name)
+
+##ClustalOmega Alignment
+
+def run_command(command):
+        subprocess.run(["powershell", "-c"] + str(command).split())
+
+
+def clustalomega_alignment(segment, filename): 
+        in_file = "db/" + segment + "/edited_sequences/" + filename + ".fasta" 
+        out_file = "db/" + segment + "/alignments/" + filename + "_alignment.fasta" 
+        clustalomega_cline = ClustalOmegaCommandline(infile=in_file, outfile=out_file, verbose=True, auto=True)
+        print(clustalomega_cline) 
+        run_command(clustalomega_cline)
+
+
+
+
+
+
 
 
 
