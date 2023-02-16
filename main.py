@@ -5,6 +5,7 @@ import load
 def main(): 
     segment_information = extract.extract()
     transform.transform(segment_information)
+    load.load()
 
 
 

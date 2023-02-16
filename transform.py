@@ -25,9 +25,6 @@ def do_transform(segment_information, segment):
                 reverse_sequences = edited_reverse_sequences_fasta(segment, f"{segment}_{sequence[0].Strain}_edited_reverse.fasta", reverse_edited_sequences, reverse_primers)
    
 
-
-
-
 #Turning edited sequences into sequence record object to be used in alignments 
 def sequence_record_objects(edited_sequence_record_information):
         forward_sequence_records = []
