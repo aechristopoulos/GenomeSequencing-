@@ -2,9 +2,9 @@ import extract
 import transform
 import load
 
-def main(): 
-    segment_information = extract.extract()
-    transform.transform(segment_information)
+def align(absolute_path): 
+    segment_information = extract.extract(absolute_path)
+    transform.transform(absolute_path, segment_information)
     load.load()
 
 
@@ -56,9 +56,6 @@ def main():
 #     for_alignment = alignment_functions.clustalw_alignment("HA_H5_edited_forward")
 #     rev_alignment = alignment_functions.clustalw_alignment("HA_H5_edited_reverse")
     
-
-if __name__ == "__main__":
-    main()
 
 # def main():
 #     # Get the list of all files and directories

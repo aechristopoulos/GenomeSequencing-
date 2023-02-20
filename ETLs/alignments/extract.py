@@ -5,9 +5,9 @@ import custom_types
 from Bio.Seq import Seq
 
 # Extract Function 
-def extract():
+def extract(absolute_path):
     segment_information = {}
-    path = "./db/"
+    path = absolute_path + "/db/"
     db = os.scandir(path)
     for entry in db: 
         if entry.is_dir():

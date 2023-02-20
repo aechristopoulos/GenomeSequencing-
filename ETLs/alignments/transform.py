@@ -4,8 +4,8 @@ from Bio.SeqRecord import SeqRecord
 import os 
 
 # transform function 
-def transform(segment_information):
-        path = "./db/"
+def transform(absolute_path, segment_information):
+        path = absolute_path + "/db/"
         db = os.scandir(path)
         for entry in db: 
                 if entry.is_dir():
