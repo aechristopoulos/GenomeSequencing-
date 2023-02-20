@@ -1,14 +1,9 @@
 #imports 
-from Bio.Seq import Seq
-from Bio import SeqIO
-from Bio import Align
-from Bio.SeqRecord import SeqRecord
-from Bio.Align.Applications import ClustalwCommandline
 from Bio.Align.Applications import ClustalOmegaCommandline
-from Bio import AlignIO
 import subprocess
 import os
 
+# load function 
 def load():
         path = "./db/"
         db = os.scandir(path)

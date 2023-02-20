@@ -1,12 +1,9 @@
-from Bio.Seq import Seq
+#imports
 from Bio import SeqIO
-from Bio import Align
 from Bio.SeqRecord import SeqRecord
-from Bio.Align.Applications import ClustalwCommandline
-from Bio import AlignIO
 import os 
 
-
+# transform function 
 def transform(segment_information):
         path = "./db/"
         db = os.scandir(path)
@@ -14,6 +11,7 @@ def transform(segment_information):
                 if entry.is_dir():
                         do_transform(segment_information, entry.name)
 
+# Gets information needed to do transform function 
 def do_transform(segment_information, segment):
         primers = segment_information[segment].Primers
         sequences = segment_information[segment].EditedSequences
@@ -37,7 +35,7 @@ def sequence_record_objects(edited_sequence_record_information):
                 reverse_sequence_records.append(reverse_record)
         return forward_sequence_records, reverse_sequence_records
 
-
+# Turns primer .fasta files into record objects that can be used in other functions 
 def primer_record_objects(primer_information):
         forward_primer_records = []
         reverse_primer_records = []
