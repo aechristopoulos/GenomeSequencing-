@@ -4,8 +4,8 @@ import subprocess
 import os
 
 # load function 
-def load():
-        path = "./db/"
+def load(absolute_path):
+        path = absolute_path + "/db/"
         db = os.scandir(path)
         for entry in db: 
                 if entry.is_dir():

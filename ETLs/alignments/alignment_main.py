@@ -5,7 +5,7 @@ import load
 def align(absolute_path): 
     segment_information = extract.extract(absolute_path)
     transform.transform(absolute_path, segment_information)
-    load.load()
+    load.load(absolute_path)
 
 
 
