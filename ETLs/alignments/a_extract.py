@@ -1,7 +1,7 @@
 # imports
 from Bio import SeqIO
 import os
-import custom_types
+import a_custom_types
 from Bio.Seq import Seq
 
 # Extract Function 
@@ -14,14 +14,14 @@ def extract(absolute_path):
             primer_info = parse_primers(path, entry.name)
             sequence_info = parse_sequences(path, entry.name)
             edited_sequence_info = parse_edited_sequences(path, entry.name)
-            segment_information[entry.name] = custom_types.DirectoryInformation(EditedSequences=edited_sequence_info, Primers=primer_info, Sequences=sequence_info)
+            segment_information[entry.name] = a_custom_types.DirectoryInformation(EditedSequences=edited_sequence_info, Primers=primer_info, Sequences=sequence_info)
     return segment_information 
 
 # create primer tupple function
 def create_primer_tupple(path, filename): 
         primer_sequence = list(SeqIO.parse(path + filename, "fasta"))[0]
         filename_list = filename.split("_")
-        primer_info = custom_types.PrimerInformation(filename_list[0], filename_list[1], filename_list[2], filename_list[3] == "revcomp", primer_sequence.seq, primer_sequence.id, primer_sequence.description)
+        primer_info = a_custom_types.PrimerInformation(filename_list[0], filename_list[1], filename_list[2], filename_list[3] == "revcomp", primer_sequence.seq, primer_sequence.id, primer_sequence.description)
         return primer_info
 
 # create sequence tupple function 
@@ -32,7 +32,7 @@ def create_sequence_tupple(path, filename):
         sequence_record_information = []
 
         for sequence in sequence_record: 
-                sr = custom_types.SequenceRecordInformation(filename_list[0], filename_list[1], sequence, len(sequence), sequence.id, sequence.description)
+                sr = a_custom_types.SequenceRecordInformation(filename_list[0], filename_list[1], sequence, len(sequence), sequence.id, sequence.description)
                 sequence_record_information.append(sr)
         return sequence_record_information
 
@@ -50,7 +50,7 @@ def create_edited_sequence_tupple(path, filename):
                 # print(len(segment_hemagglutinin_sequence))
                 forward_sequence = segment_hemagglutinin_sequence[0:200]
                 reverse_sequence = segment_hemagglutinin_sequence[-200:]
-                esr = custom_types.EditedSequenceRecordInformation(filename_list[0], filename_list[1], forward_sequence, reverse_sequence, len(forward_sequence), len(reverse_sequence), sequence.id, sequence.description)
+                esr = a_custom_types.EditedSequenceRecordInformation(filename_list[0], filename_list[1], forward_sequence, reverse_sequence, len(forward_sequence), len(reverse_sequence), sequence.id, sequence.description)
                 edited_sequence_record_information.append(esr)
         return edited_sequence_record_information
 

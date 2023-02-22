@@ -1,4 +1,4 @@
-import custom_types
+import hd_custom_types
 import os 
 from Bio import SeqIO
 
@@ -12,14 +12,14 @@ def extract(absolute_path):
         if entry.is_dir():
             primer_info = parse_primers(path, entry.name)
             alignment_info = parse_alignments(path, entry.name)
-            segment_information[entry.name] = custom_types.DirectoryInformation(Primers=primer_info, Alignments=alignment_info)
+            segment_information[entry.name] = hd_custom_types.DirectoryInformation(Primers=primer_info, Alignments=alignment_info)
     return segment_information
 
 # create primer tupple function
 def create_primer_tupple(path, filename): 
         primer_sequence = list(SeqIO.parse(path + filename, "fasta"))[0]
         filename_list = filename.split("_")
-        primer_info = custom_types.PrimerInformation(filename_list[0], filename_list[1], filename_list[2], filename_list[3] == "revcomp", primer_sequence.seq, primer_sequence.id, primer_sequence.description)
+        primer_info = hd_custom_types.PrimerInformation(filename_list[0], filename_list[1], filename_list[2], filename_list[3] == "revcomp", primer_sequence.seq, primer_sequence.id, primer_sequence.description)
         return primer_info
 
 # creates primer dictionary 
@@ -41,7 +41,7 @@ def create_alignment_tupple(path, filename):
      alignment_record_information = []
 
      for sequence in alignment_record: 
-          ar = custom_types.AlignmentInformation(filename_list[0], filename_list[1], sequence, sequence.id, sequence.description)
+          ar = hd_custom_types.AlignmentInformation(filename_list[0], filename_list[1], sequence, sequence.id, sequence.description)
           alignment_record_information.append(ar)
      return alignment_record_information 
 
