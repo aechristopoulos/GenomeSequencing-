@@ -1,39 +1,57 @@
-import os
+import custom_types
+import os 
+from Bio import SeqIO
 
-def extract_sequence_information():
-    sequence_information = {}
-    # For every folder (e.g. HA, NA, NP, PB1)
-    for it in os.scandir():
-        # We don't want to see hamming_distance.py
-        if it.is_dir() and it.name != "__pycache__":
-            # Folder name
-            segment_name = it.name
 
-            # Folder path
-            gene_segment_folder = it.path
+# Extract Function 
+def extract(absolute_path):
+    segment_information = {}
+    path = absolute_path + "/db/"
+    db = os.scandir(path)
+    for entry in db: 
+        if entry.is_dir():
+            primer_info = parse_primers(path, entry.name)
+            alignment_info = parse_alignments(path, entry.name)
+            segment_information[entry.name] = custom_types.DirectoryInformation(Primers=primer_info, Alignments=alignment_info)
+    return segment_information
 
-            # Each file within the folder
-            for gene_segement in os.scandir(gene_segment_folder):
-                filename = gene_segement.name
+# create primer tupple function
+def create_primer_tupple(path, filename): 
+        primer_sequence = list(SeqIO.parse(path + filename, "fasta"))[0]
+        filename_list = filename.split("_")
+        primer_info = custom_types.PrimerInformation(filename_list[0], filename_list[1], filename_list[2], filename_list[3] == "revcomp", primer_sequence.seq, primer_sequence.id, primer_sequence.description)
+        return primer_info
 
-                # Path from current directory
-                path = f"{gene_segment_folder}/{filename}"
+# creates primer dictionary 
+def parse_primers(path, segment):
+    segment_path = path + segment + "/primers/"
+    segment_folder = os.scandir(segment_path)
+    segments = [] 
+    for entry in segment_folder:
+        if entry.is_file():
+            primer_tupple = create_primer_tupple(segment_path, entry.name)
+            segments.append(primer_tupple)
+    return segments
 
-                if gene_segement.name == "aligned_sequence":
-                    with open(path, "r") as f:
-                        aligned_sequence = f.read()
+#create aligment tupple function 
+def create_alignment_tupple(path, filename):
+     filename_list = filename.split("_")
+     alignment_record = list(SeqIO.parse(path +filename, "fasta"))
 
-                if gene_segement.name == "forward_primer.txt":
-                    with open(path, "r") as f:
-                        forward_primer = f.read()
+     alignment_record_information = []
 
-                if gene_segement.name == "reverse_primer.txt":
-                    with open(path, "r") as f:
-                        reverse_primer = f.read()
+     for sequence in alignment_record: 
+          ar = custom_types.AlignmentInformation(filename_list[0], filename_list[1], sequence, sequence.id, sequence.description)
+          alignment_record_information.append(ar)
+     return alignment_record_information 
 
-            # Dictionary value that contains information from each file
-            files = (aligned_sequence, forward_primer.split("\n"), reverse_primer.split("\n"))
-
-            sequence_information[segment_name] = files
-            
-    return sequence_information
+#create alignment dictionary function 
+def parse_alignments(path, sequence): 
+     alignment_path = path + sequence + "/alignments/"
+     alignment_folder = os.scandir(alignment_path)
+     alignments = []
+     for entry in alignment_folder: 
+          if entry.is_file():
+               alignment_tupple = create_alignment_tupple(alignment_path, entry.name)
+               alignments.append(alignment_tupple)
+     return alignments

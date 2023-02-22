@@ -4,7 +4,7 @@ from extract import extract_sequence_information
 from transform import transform_sequence_information
 from load import load_sequence_information
 
-def main():
+def hamming_distance_main():
 
     # E
     # Extract data from files, put it into a dictionary
@@ -18,5 +18,3 @@ def main():
     # Save the rows to a file (.csv)
     load_sequence_information(hamming_distances)
 
-if __name__ == "__main__":
-    main()
