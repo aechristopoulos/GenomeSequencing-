@@ -9,7 +9,7 @@ def hamming_distance_main(absolute_path):
     # Extract data from files, put it into a dictionary
     sequence_information = extract(absolute_path)
     hamming_distances = transform(absolute_path, sequence_information)
-    load_sequence_information(hamming_distances)
+    load_sequence_information(absolute_path, hamming_distances)
 
     # # T
     # # Transform data within dictionary to what we'd like the rows to look like
