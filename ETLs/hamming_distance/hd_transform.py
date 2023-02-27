@@ -8,57 +8,48 @@ import os
 def transform(absolute_path, segment_information):
      path = absolute_path + "/db/"
      db = os.scandir(path)
+     rows = {}
      for entry in db: 
           if entry.is_dir():
-               return do_transform(segment_information, entry.name)
+               row_information = do_transform(segment_information, entry.name)
+               rows[entry.name] = row_information
+     return rows 
     
 
 def do_transform(segment_information, segment): 
-     primer_info = segment_information[segment].Primers
      alignment_info = segment_information[segment].Alignments
-     row_information = []
+     row_information = {}
      for alignments in alignment_info:
-          prime
-     for primer in primer_info:
-          for alignments in alignment_info:
-               for sequence in alignments:
-                   print(sequence.Description)
-                   print(primer.Sequence.seq)
-                   print(sequence.Sequence.seq)
-                   print()
-                   h_distance = indexing(primer.Sequence.seq, sequence.Sequence.seq)
-                   row_information.append(results_row)
+          primers = find_primers(alignments)
+          for primer in primers:
+               h_distances = calc_hamming(primer, alignments)
+               row_information[f"{alignments[0].Segment}_{alignments[0].Strain}_{primer.Id}"] = h_distances
      return row_information
+
 
 def find_primers(alignment_info):
      primers = []
-     for alignments in alignment_info:
-          for alignment in alignments:
-               if "primer" in alignment.Description:
-                    primers.append(alignment)
+     for alignment in alignment_info:
+          if "primer" in alignment.Description:
+               primers.append(alignment)
      return primers
+
 
 def calc_hamming(primer, aligmments):
      hamming = []
      for alignment in aligmments: 
+          # print(primer.Description)
+          # print(alignment.Description)
+          # print()
           h_distance = indexing(primer.Sequence.seq, alignment.Sequence.seq)
           results_row = {
-                         "description": "", 
-                         "strain_type": "",
-                         "segment": "", 
-                         "year": "",
+                         "description": alignment.Description, 
+                         
+                         "sequence": alignment,
 
-                         "forward_sequence_subset": "", 
-                         "reverse_sequence_subset": "",
+                         "primer": primer,
 
-                         "forward_primer": "",
-                         "reverse_primer": "",
-
-                         "forward_hamming_%":"",
-                         "reverse_hamming_%":"",
-
-                         "forward_hamming": h_distance,
-                         "reverse_hamming": ""
+                         "hamming_distance": h_distance
                     }
           hamming.append(results_row)
      return hamming
@@ -66,8 +57,13 @@ def calc_hamming(primer, aligmments):
 def indexing(aligned_primer, aligned_sequence):
     primer_str = aligned_primer._data.decode("utf-8")
     sequence_str = aligned_sequence._data.decode("utf-8")
-    first_index = re.search(r'[^-]', primer_str).start()
-    second_index = re.search(r'[-]', primer_str[first_index:]).start()
+
+    first_regex = re.search(r'[^-]', primer_str)
+    first_index = first_regex.start()
+
+    second_regex = re.search(r'[-]', primer_str[first_index:])
+    second_index = len(primer_str[first_index:]) if second_regex is None else second_regex.start()
+
     indexed_primer = primer_str[first_index:first_index + second_index]
     indexed_sequence = sequence_str[first_index:first_index + second_index]
     return hamming_distance(indexed_primer, indexed_sequence)
