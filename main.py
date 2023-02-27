@@ -10,7 +10,7 @@ from ETLs.alignments.alignment_main import align
 from ETLs.hamming_distance.hamming_distancing_main import hamming_distance_main
 
 def main():
-    align(absolute_path)
+    # align(absolute_path)
     hamming_distance_main(absolute_path)
 
 

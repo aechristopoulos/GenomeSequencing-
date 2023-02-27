@@ -45,9 +45,9 @@ def calc_hamming(primer, aligmments):
           results_row = {
                          "description": alignment.Description, 
                          
-                         "sequence": alignment,
+                         "sequence": alignment.Sequence.seq,
 
-                         "primer": primer,
+                         "primer": primer.Sequence.seq,
 
                          "hamming_distance": h_distance
                     }
