@@ -12,6 +12,8 @@ def transform_sequence_information(sequence_information):
         # Turn all sequences in xml format into Pandas Dataframes
         non_coding_region = pd.read_xml(aligned_sequence)
         #read .fasta files instead 
+        # SeqIO.parse()
+        
 
         # Each sequence
         for row in non_coding_region.iloc:

@@ -10,28 +10,10 @@ def extract(absolute_path):
     db = os.scandir(path)
     for entry in db: 
         if entry.is_dir():
-            primer_info = parse_primers(path, entry.name)
             alignment_info = parse_alignments(path, entry.name)
-            segment_information[entry.name] = hd_custom_types.DirectoryInformation(Primers=primer_info, Alignments=alignment_info)
+            segment_information[entry.name] = hd_custom_types.DirectoryInformation(Alignments=alignment_info)
     return segment_information
 
-# create primer tupple function
-def create_primer_tupple(path, filename): 
-        primer_sequence = list(SeqIO.parse(path + filename, "fasta"))[0]
-        filename_list = filename.split("_")
-        primer_info = hd_custom_types.PrimerInformation(filename_list[0], filename_list[1], filename_list[2], filename_list[3] == "revcomp", primer_sequence.seq, primer_sequence.id, primer_sequence.description)
-        return primer_info
-
-# creates primer dictionary 
-def parse_primers(path, segment):
-    segment_path = path + segment + "/primers/"
-    segment_folder = os.scandir(segment_path)
-    segments = [] 
-    for entry in segment_folder:
-        if entry.is_file():
-            primer_tupple = create_primer_tupple(segment_path, entry.name)
-            segments.append(primer_tupple)
-    return segments
 
 #create aligment tupple function 
 def create_alignment_tupple(path, filename):
