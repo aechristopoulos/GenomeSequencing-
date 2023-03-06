@@ -30,13 +30,13 @@ def create_consensus_sequence(alignment_file, id, description):
 create_consensus_sequence("db/HA/alignments/HA_H1_edited_forward_alignment.fasta", "HA_H1_Forward", "HA H1 forward consensus sequence")
 create_consensus_sequence("db/HA/alignments/HA_H1_edited_reverse_alignment.fasta", "HA_H1_Reverse", "HA H1 reverse consensus sequence")
 create_consensus_sequence("db/HA/alignments/HA_H3_edited_forward_alignment.fasta", "HA_H3_Forward", "HA H3 forward consensus sequence")
-create_consensus_sequence("db/HA/alignments/HA_H3_edited_reverse_alignment.fasta", "HA_H3_reverse", "HA H# reverse consensus sequence")
+create_consensus_sequence("db/HA/alignments/HA_H3_edited_reverse_alignment.fasta", "HA_H3_Reverse", "HA H# reverse consensus sequence")
 create_consensus_sequence("db/HA/alignments/HA_H5_edited_forward_alignment.fasta", "HA_H5_Forward", "HA H5 forward consensus sequence")
 create_consensus_sequence("db/HA/alignments/HA_H5_edited_reverse_alignment.fasta", "HA_H5_Reverse", "HA H5 reverse consensus sequence")
 create_consensus_sequence("db/HA/alignments/HA_H7_edited_forward_alignment.fasta", "HA_H7_Forward", "HA H7 forward consensus sequence")
 create_consensus_sequence("db/HA/alignments/HA_H7_edited_reverse_alignment.fasta", "HA_H7_Reverse", "HA H7 reverse consensus sequence")
 create_consensus_sequence("db/HA/alignments/HA_H9_edited_forward_alignment.fasta", "HA_H9_Forward", "HA H9 forward consensus sequence")
-create_consensus_sequence("db/HA/alignments/HA_H9_edited_reverse_alignment.fasta", "HA_H9_Forward", "HA H9 forward consensus sequence")
+create_consensus_sequence("db/HA/alignments/HA_H9_edited_reverse_alignment.fasta", "HA_H9_Reverse", "HA H9 forward consensus sequence")
 
 # MP consensus sequences 
 create_consensus_sequence("db/MP/alignments/MP_H1_edited_forward_alignment.fasta", "MP_H1_Forward", "MP H1 forward consensus sequence")
@@ -48,6 +48,7 @@ create_consensus_sequence("db/MP/alignments/MP_H5_edited_reverse_alignment.fasta
 create_consensus_sequence("db/MP/alignments/MP_H7_edited_forward_alignment.fasta", "MP_H7_Forward", "MP H7 forward consensus sequence")
 create_consensus_sequence("db/MP/alignments/MP_H7_edited_reverse_alignment.fasta", "MP_H7_Reverse", "MP H7 reverse consensus sequence")
 create_consensus_sequence("db/MP/alignments/MP_H9_edited_forward_alignment.fasta", "MP_H9_Forward", "MP H9 forward consensus sequence")
+create_consensus_sequence("db/MP/alignments/MP_H9_edited_reverse_alignment.fasta", "MP_H9_Reverse", "MP H9 reverse consensus sequence")
 
 # NA consensus sequences 
 create_consensus_sequence("db/NA/alignments/NA_H1_edited_forward_alignment.fasta", "NA_H1_Forward", "NA H1 forward consensus sequence")
