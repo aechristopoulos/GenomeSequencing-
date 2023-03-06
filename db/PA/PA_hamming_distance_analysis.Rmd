@@ -1,0 +1,106 @@
+---
+title: "PA Hamming Distances"
+author: "Alexandra Christopoulos"
+date: "2023-03-03"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(root.dir = "C:/Users/Lexie Christopoulos/Repos/GenomeSequencing-/db/", echo = TRUE)
+```
+
+#in console: setwd("C:/Users/Lexie Christopoulos/Repos/GenomeSequencing-/db/PA")
+
+PA_H1 Forward 1.4 primer Hamming Distances 
+```{r}
+PA_H1_F <-read.csv("hamming_distance_results/PA_H1_PA_Forward_1.4_results.csv")
+
+PA_H1_1 <- PA_H1_F[-c(3726),]
+
+barplot(table(PA_H1_1$hamming_distance), xlab = "Hamming Distance", ylab = "Number of Sequences", ylim = c(0,3500))
+```
+
+PA_H1 Reverse 2.4 primer Hamming Distances 
+```{r}
+PA_H1_R <-read.csv("hamming_distance_results/PA_H1_PA_Reverse_2.4_results.csv")
+
+PA_H1_2 <- PA_H1_R[-c(3726),]
+
+barplot(table(PA_H1_2$hamming_distance), xlab = "Hamming Distance", ylab = "Number of Sequences", ylim = c(0,2500))
+```
+
+PA_H3 Forward 1.4 primer Hamming Distances
+```{r}
+PA_H3_F <-read.csv("hamming_distance_results/PA_H3_PA_Forward_1.4_results.csv")
+
+PA_H3_1 <- PA_H3_F[-c(7224),]
+
+barplot(table(PA_H3_1$hamming_distance), xlab = "Hamming Distance", ylab = "Number of Sequences", ylim = c(0,7500))
+
+```
+
+PA_H3 Reverse 2.4 primer Hamming Distances 
+```{r}
+PA_H3_R <-read.csv("hamming_distance_results/PA_H3_PA_Reverse_2.4_results.csv")
+
+PA_H3_2 <- PA_H3_R[-c(7224),]
+
+barplot(table(PA_H3_R$hamming_distance), xlab = "Hamming Distance", ylab = "Number of Sequences", ylim = c(0,7500))
+
+```
+
+PA_H5 Forward 1.4 primer Hamming Distances 
+```{r}
+PA_H5_F <-read.csv("hamming_distance_results/PA_H5_PA_Forward_1.4_results.csv")
+
+PA_H5_1 <- PA_H5_F[-c(6),]
+
+barplot(table(PA_H5_1$hamming_distance), xlab = "Hamming Distance", ylab = "Number of Sequences", ylim = c(0,5))
+```
+
+PA_H5 Reverse 2.4 primer Hamming Distances 
+```{r}
+PA_H5_R <-read.csv("hamming_distance_results/PA_H5_PA_Reverse_2.4_results.csv")
+
+PA_H5_2 <- PA_H5_R[-c(6),]
+
+barplot(table(PA_H5_2$hamming_distance), xlab = "Hamming Distance", ylab = "Number of Sequences", ylim = c(0,5))
+```
+
+PA_H7 Forward 1.4 primer Hamming Distances 
+```{r}
+PA_H7_F <-read.csv("hamming_distance_results/PA_H7_PA_Forward_1.4_results.csv")
+
+PA_H7_1 <- PA_H7_F[-c(16),]
+
+barplot(table(PA_H7_1$hamming_distance), xlab = "Hamming Distance", ylab = "Number of Sequences", ylim = c(0,10))
+```
+
+PA_H7 Reverse 2.4 primer Hamming Distances 
+```{r}
+PA_H7_R <-read.csv("hamming_distance_results/PA_H7_PA_Reverse_2.4_results.csv")
+
+PA_H7_2 <- PA_H7_R[-c(16),]
+
+barplot(table(PA_H7_2$hamming_distance), xlab = "Hamming Distance", ylab = "Number of Sequences", ylim = c(0,10))
+```
+
+PA_H9 Forward 1.4 primer Hamming Distances 
+```{r}
+PA_H9_F <-read.csv("hamming_distance_results/PA_H9_PA_Forward_1.4_results.csv")
+
+PA_H9_1 <- PA_H9_F[-c(4),]
+
+barplot(table(PA_H9_1$hamming_distance), xlab = "Hamming Distance", ylab = "Number of Sequences", ylim = c(0,5))
+```
+
+PA_H9 Reverse 2.4 primer Hamming Distances 
+```{r}
+PA_H9_R <-read.csv("hamming_distance_results/PA_H9_PA_Reverse_2.4_results.csv")
+
+PA_H9_2 <- PA_H9_R[-c(4),]
+
+barplot(table(PA_H9_2$hamming_distance), xlab = "Hamming Distance", ylab = "Number of Sequences", ylim = c(0,5))
+
+```
+

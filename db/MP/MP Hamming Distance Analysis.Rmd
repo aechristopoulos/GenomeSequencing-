@@ -1,0 +1,111 @@
+---
+title: "Hamming Distances for MP"
+author: "Alexandra Christopoulos"
+date: "2023-03-03"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(root.dir = "C:/Users/Lexie Christopoulos/Repos/GenomeSequencing-/db/",echo = TRUE)
+
+```
+
+#in console: setwd("C:/Users/Lexie Christopoulos/Repos/GenomeSequencing-/db/MP")
+
+MP_H1 Forward 1.1 primer Hamming Distances 
+```{r}
+MP_H1_F <- read.csv("hamming_distance_results/MP_H1_MP_Forward_1.1_results.csv")
+
+MP_H1_1 <- MP_H1_F[-c(1999),]
+
+barplot(table(MP_H1_1$hamming_distance), xlab = "Hamming Distance", ylab = "Number of Sequences", ylim = c(0,2000))
+```
+
+MP_H1 Reverse 2.1 primer Hamming Distances 
+```{r}
+MP_H1_R <- read.csv("hamming_distance_results/MP_H1_MP_Reverse_2.1_results.csv")
+MP_H1_2 <- MP_H1_R[-c(1999),]
+
+barplot(table(MP_H1_2$hamming_distance), xlab = "Hamming Distance", ylab = "Number of Sequences", ylim = c(0,2000))
+
+```
+
+MP_H3 Forward 1.1 primer Hamming Distances 
+```{r}
+MP_H3_F <- read.csv("hamming_distance_results/MP_H3_MP_Forward_1.1_results.csv")
+MP_H3_1 <- MP_H3_F[-c(3627),]
+
+barplot(table(MP_H3_1$hamming_distance), xlab = "Hamming Distance", ylab = "Number of Sequences", ylim = c(0,2500))
+
+```
+
+MP_H3 Reverse 2.1 primer Hamming Distances 
+```{r}
+MP_H3_R <- read.csv("hamming_distance_results/MP_H3_MP_Reverse_2.1_results.csv")
+
+MP_H3_2 <- MP_H3_R[-c(3627),]
+
+barplot(table(MP_H3_2$hamming_distance), xlab = "Hamming Distance", ylab = "Number of Sequences", ylim = c(0,2500))
+
+```
+
+MP_H5 Forward 1.1 primer Hamming Distances 
+```{r}
+MP_H5_F <- read.csv("hamming_distance_results/MP_H5_MP_Forward_1.1_results.csv")
+
+MP_H5_1 <- MP_H5_F[-c(7),]
+
+barplot(table(MP_H5_1$hamming_distance), xlab = "Hamming Distance", ylab = "Number of Sequences", ylim = c(0,7))
+
+```
+
+MP_H5 Reverse 2.1 primer Hamming Distances 
+```{r}
+MP_H5_R <-read.csv("hamming_distance_results/MP_H5_MP_Reverse_2.1_results.csv")
+
+MP_H5_2 <- MP_H5_R[-c(7),]
+
+barplot(table(MP_H5_2$hamming_distance), xlab = "Hamming Distance", ylab = "Number of Sequences", ylim = c(0,7))
+
+```
+
+MP_H7 Forward 1.1 primer Hamming Distances 
+```{r}
+MP_H7_F <- read.csv("hamming_distance_results/MP_H7_MP_Forward_1.1_results.csv")
+
+MP_H7_1 <- MP_H7_F[-c(15),]
+
+barplot(table(MP_H7_1$hamming_distance), xlab = "Hamming Distance", ylab = "Number of Sequences", ylim = c(0,8))
+
+```
+
+MP_H7 Reverse 2.1 primer Hamming Distances 
+```{r}
+MP_H7_R <- read.csv("hamming_distance_results/MP_H7_MP_Reverse_2.1_results.csv")
+
+MP_H7_2 <- MP_H7_R[-c(15),]
+
+barplot(table(MP_H7_2$hamming_distance), xlab = "Hamming Distance", ylab = "Number of Sequences", ylim = c(0,8))
+
+```
+
+MP_H9 Forward 1.1 primer Hamming Distances 
+```{r}
+MP_H9_F <- read.csv("hamming_distance_results/MP_H9_MP_Forward_1.1_results.csv")
+
+MP_H9_1 <- MP_H9_F[-c(4),]
+
+barplot(table(MP_H9_1$hamming_distance), xlab = "Hamming Distance", ylab = "Number of Sequences", ylim = c(0,4))
+
+```
+
+MP_H9 Reverse 2.1 primer Hamming Distances 
+```{r}
+MP_H9_R <- read.csv("hamming_distance_results/MP_H9_MP_Reverse_2.1_results.csv")
+
+MP_H9_2 <- MP_H9_R[-c(4),]
+
+barplot(table(MP_H9_2$hamming_distance), xlab = "Hamming Distance", ylab = "Number of Sequences", ylim = c(0,4))
+
+```
+
