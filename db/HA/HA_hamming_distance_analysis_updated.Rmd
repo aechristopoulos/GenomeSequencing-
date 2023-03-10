@@ -1,0 +1,48 @@
+---
+title: "Updated HA Hamming distances"
+author: "Alexandra Christopoulos"
+date: "2023-03-07"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(root.dir = "C:/Users/Lexie Christopoulos/Repos/GenomeSequencing-/db/", echo = TRUE)
+```
+
+
+HA_H1 Forward 1.9 primer Hamming Distances 
+```{r}
+HA_H1_F1 <-read.csv("hamming_distance_results/HA_H1_HA_Forward_1.9_results.csv")
+
+HA_H1_1 <- HA_H1_F1[-c(4380,4381,4382, 4383, 4384),]
+
+barplot(table(HA_H1_1$hamming_distance), xlab = "Hamming Distance", ylab = "Number of Sequences", xlim = c(0,28), ylim = c(0,3000))
+```
+
+HA_H1 Reverse 2.5 primer Hamming Distances 
+```{r}
+HA_H1_R1 <-read.csv("hamming_distance_results/HA_H1_HA_Reverse_2.5_results.csv")
+
+HA_H1_2 <- HA_H1_R1[-c(4380,4381,4382),]
+
+barplot(table(HA_H1_2$hamming_distance), xlab = "Hamming Distance", ylab = "Number of Sequences", xlim = c(0,28), ylim = c(0,3000))
+```
+
+HA_H3 Forward 1.10 primer Hamming Distances 
+```{r}
+HA_H3_F1 <-read.csv("hamming_distance_results/HA_H3_HA_Forward_1.10_results.csv")
+
+HA_H3_1 <- HA_H3_F1[-c(8289,8290,8291, 8292, 8293),]
+
+barplot(table(HA_H3_1$hamming_distance), xlab = "Hamming Distance", ylab = "Number of Sequences",xlim = c(0,28), ylim = c(0,5000))
+```
+
+HA_H3 Reverse 2.6 primer hamming distances 
+```{r}
+HA_H3_R <-read.csv("hamming_distance_results/HA_H3_HA_Reverse_2.6_results.csv")
+
+HA_H3_2<- HA_H3_R[-c(8289,8290,8291),]
+
+barplot(table(HA_H3_2$hamming_distance), xlab = "Hamming Distance", ylab = "Number of Sequences",xlim = c(0,28), ylim = c(0,5000))
+```
+
