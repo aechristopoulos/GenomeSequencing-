@@ -50,13 +50,13 @@ def reverse_primers(primer_sequence, id, description):
 # forward_primers("AGCAAAAGCAGGGGATAATTCTATTAAC", "HA_Forward_1.6", "HA forward primer 1")
 # forward_primers("CAAAAGCAGGGGGAAAACAAAAGAA", "HA_Forward_1.7", "HA forward primer 2")
 # forward_primers("AGCAAAAGCAGGGGATAATAAAAACAAC", "HA_Forward_1.8_Brisbane", "HA forward primer, Brisbane 2007 sequence specific")
-forward_primers("GGAAAACAAAAGCAACAAAAATGAAGGC", "HA_Forward_1.9", "HA forward primer 3 H1 specific")
-forward_primers("AGGGGATAATTCTATTAACCATGAAGACT", "HA_Forward_1.10", "HA forward primer 4 H3 specific")
+# forward_primers("GGAAAACAAAAGCAACAAAAATGAAGGC", "HA_Forward_1.9", "HA forward primer 3 H1 specific")
+# forard_primers("AGGGGATAATTCTATTAACCATGAAGACT", "HA_Forward_1.10", "HA forward primer 4 H3 specific")
 # # reverse
 # reverse_primers("CAAGGGTGTTTTTCTCATGATTCTGAA", "HA_Reverse_2.3", "HA reverse primer")
 # reverse_primers("GAAACAAGGGTGTTTTTCCTTATATTTCTG", "HA_Reverse_2.4_Brisbane", "HA reverse primer, Brisbane 2007 sequence specific")
-reverse_primers("CTACATTGTAGAGACCCATTAGAGCAC", "HA_Reverse_2.5", "HA revrrse primer 2 H1 specific")
-reverse_primers("AATGTTGCATCTAATGTTGCCCTTTTG", "HA_Reverse_2.6", "HA reverse primer 3 H3 specific")
+# reverse_primers("CTACATTGTAGAGACCCATTAGAGCAC", "HA_Reverse_2.5", "HA revrrse primer 2 H1 specific")
+# reverse_primers("AATGTTGCATCTAATGTTGCCCTTTTG", "HA_Reverse_2.6", "HA reverse primer 3 H3 specific")
 
 
 # #NP primers: 
@@ -86,7 +86,4 @@ reverse_primers("AATGTTGCATCTAATGTTGCCCTTTTG", "HA_Reverse_2.6", "HA reverse pri
 # forward_primers("ATGGATTCCCACACTGTGT", "NS_Forward_1.3_Brisbane", "NS forward primer, Brisbane 2007 sequence specific")
 # # reverse
 # reverse_primers("GATCAGTAGAAACAAGGGTGTT", "NS_Reverse_2.1", "NS reverse primer")
-
-
-
 

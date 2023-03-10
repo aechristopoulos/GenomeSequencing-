@@ -19,8 +19,8 @@ def do_transform(segment_information, segment):
         for sequence in sequences:
                 forward_edited_sequences, reverse_edited_sequences =sequence_record_objects(sequence)
 
-                forward_sequences = edited_forward_sequences_fasta(segment, f"{segment}_{sequence[0].Strain}_edited_forward.fasta", forward_edited_sequences, forward_primers)
-                reverse_sequences = edited_reverse_sequences_fasta(segment, f"{segment}_{sequence[0].Strain}_edited_reverse.fasta", reverse_edited_sequences, reverse_primers)
+                forward_sequences = edited_forward_sequences_fasta(segment, f"{segment}_{sequence[0].Strain}_edited_forward_NCR.fasta", forward_edited_sequences, forward_primers)
+                reverse_sequences = edited_reverse_sequences_fasta(segment, f"{segment}_{sequence[0].Strain}_edited_reverse_NCR.fasta", reverse_edited_sequences, reverse_primers)
    
 
 #Turning edited sequences into sequence record object to be used in alignments 
