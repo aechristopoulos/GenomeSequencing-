@@ -13,20 +13,38 @@ knitr::opts_chunk$set(root.dir = "C:/Users/Lexie Christopoulos/Repos/GenomeSeque
 
 MP_H1 Forward 1.1 primer NCR Hamming Distances 
 ```{r}
-MP_H1_F <- read.csv("hamming_distance_results/MP_H1_MP_Forward_1.1_results_NCR.csv")
+MP_H1_F <- read.csv("hamming_distance_results/MP_H1_MP_Forward_1.4_results_NCR.csv")
 
-MP_H1_1 <- MP_H1_F[-c(4018),]
+MP_H1_1 <- MP_H1_F[-c(3990, 3991, 3992),]
 
-barplot(table(MP_H1_1$hamming_distance), xlab = "Hamming Distance", ylab = "Number of Sequences", ylim = c(0,5000))
+barplot(table(MP_H1_1$hamming_distance), xlab = "Hamming Distance", ylab = "Number of Sequences", ylim = c(0,4500))
 ```
 
-MP_H1 Reverse 2.1 primer NCR Hamming Distances 
-```{r}
-MP_H1_R <- read.csv("hamming_distance_results/MP_H1_MP_Reverse_2.1_results_NCR.csv")
+MP Forward 1.4 primer: AGC AAA AGC AGG TAG ATG TTT AAA GAT GAG 
+ 
+This primer is specific for MP H1Nx, H7N9, and H9N2 strains of Influenza A. The primer consists of the universal non-coding region the rest of the non-coding region, and the start of the coding region specific to the MP segment of H1Nx, H7N9, and H9N2 strains of Influenza.  
 
-MP_H1_2 <- MP_H1_R[-c(4018),]
+MP_H1 Forward 1.6 primer NCR Hamming Distances 
+```{r}
+MP_H1_F <- read.csv("hamming_distance_results/MP_H1_MP_Forward_1.6_results_NCR.csv")
+
+MP_H1_2 <- MP_H1_F[-c(3990, 3991, 3992),]
 
 barplot(table(MP_H1_2$hamming_distance), xlab = "Hamming Distance", ylab = "Number of Sequences", ylim = c(0,4500))
+```
+
+MP Forward 1.6 primer: AGC AAA AGC AGG TAG ATR TTK AAA GAT GAG 
+
+This primer is universal for all MP segments of Influenza A. It will work with any strain of the virus. It is a mixed-base primer, having a mixed-base in two positions. This means that the hamming distances are actually 0 and 1 (working on fixing the code to not count mixed-bases as a mismatch). The primer consists of the universal non-coding region, the rest of the non-coding region, and the start of the coding region for the MP segment of all strains of Influenza. 
+
+
+MP_H1 Reverse 2.2 primer NCR Hamming Distances 
+```{r}
+MP_H1_R <- read.csv("hamming_distance_results/MP_H1_MP_Reverse_2.2_results_NCR.csv")
+
+MP_H1_3 <- MP_H1_R[-c(3990),]
+
+barplot(table(MP_H1_3$hamming_distance), xlab = "Hamming Distance", ylab = "Number of Sequences", ylim = c(0,4500))
 ```
 
 MP_H3 Forward 1.1 primer NCR Hamming Distances 

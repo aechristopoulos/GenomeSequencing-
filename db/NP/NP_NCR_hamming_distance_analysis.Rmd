@@ -11,41 +11,83 @@ knitr::opts_chunk$set(root.dir = "C:/Users/Lexie Christopoulos/Repos/GenomeSeque
 
 #in console: setwd("C:/Users/Lexie Christopoulos/Repos/GenomeSequencing-/db/NP")
 
-NP_H1 Forward 1.5 primer NCR Hamming Distances 
+NP_H1 Forward 1.7 primer NCR Hamming Distances 
 ```{r}
-NP_H1_F <-read.csv("hamming_distance_results/NP_H1_NP_Forward_1.5_results_NCR.csv")
+NP_H1_F <-read.csv("hamming_distance_results/NP_H1_NP_Forward_1.7_results_NCR.csv")
 
-NP_H1_1 <- NP_H1_F[-c(2902),]
+NP_H1_1 <- NP_H1_F[-c(2668, 2669, 2670),]
 
-barplot(table(NP_H1_1$hamming_distance), xlab = "Hamming Distance", ylab = "Number of Sequences", ylim = c(0,3000))
+barplot(table(NP_H1_1$hamming_distance), xlab = "Hamming Distance", ylab = "Number of Sequences", ylim = c(0,2500))
 ```
 
-NP_H1 Reverse 2.3 primer NCR Hamming Distances 
-```{r}
-NP_H1_R <-read.csv("hamming_distance_results/NP_H1_NP_Reverse_2.3_results_NCR.csv")
+NP Forward 1.7 primer: AGC AAA AGC AGG GTW GAT AAT CAC TCA 
 
-NP_H1_2 <- NP_H1_R[-c(2902),]
+Mixed base primer. Mixed base counts as a mismatch  
+
+
+NP_H1 Forward 1.6 primer NCR Hamming Distances 
+```{r}
+NP_H1_F2 <-read.csv("hamming_distance_results/NP_H1_NP_Forward_1.6_results_NCR.csv")
+
+NP_H1_2 <- NP_H1_F2[-c(2268, 2269, 2670),]
 
 barplot(table(NP_H1_2$hamming_distance), xlab = "Hamming Distance", ylab = "Number of Sequences", ylim = c(0,2500))
+```
+
+MP Forward 1.6 primer: AGC AAA AGC AGG GTA GAT AAT CAC TCA 
+
+Specific for H1Nx, H5Nx, H7N9, and N9N2 strains. 
+
+
+NP_H1 Reverse 2.5 primer NCR Hamming Distances 
+```{r}
+NP_H1_R <-read.csv("hamming_distance_results/NP_H1_NP_Reverse_2.5_results_NCR.csv")
+
+NP_H1_3 <- NP_H1_R[-c(2268),]
+
+barplot(table(NP_H1_3$hamming_distance), xlab = "Hamming Distance", ylab = "Number of Sequences", ylim = c(0,3000))
 
 ```
 
-NP_H3 Forward 1.5 primer NCR Hamming Distances 
+MP Reverse 2.5 primer: GCG ACT AGT AGA AAC AAG GGT ATT TTT CTT 
+
+Universal reverse MP primer for all strains. 6 nucleotide long 5' tail (GCG ACT) was not included in the hamming distance calculation. 
+
+
+NP_H3 Forward 1.7 primer NCR Hamming Distances 
 ```{r}
-NP_H3_F <-read.csv("hamming_distance_results/NP_H3_NP_Forward_1.5_results_NCR.csv")
+NP_H3_F <-read.csv("hamming_distance_results/NP_H3_NP_Forward_1.7_results_NCR.csv")
 
-NP_H3_1 <- NP_H3_F[-c(5046),]
+NP_H3_1 <- NP_H3_F[-c(4617, 4618, 4619),]
 
-barplot(table(NP_H3_1$hamming_distance), xlab = "Hamming Distance", ylab = "Number of Sequences", ylim = c(0,6000))
+barplot(table(NP_H3_1$hamming_distance), xlab = "Hamming Distance", ylab = "Number of Sequences", ylim = c(0, 5000))
 ```
 
-NP_H3 Reverse 2.3 primer NCR Hamming Distance Results 
+MP Forward 1.7 primer: NP Forward 1.7 primer: AGC AAA AGC AGG GTW GAT AAT CAC TCA 
+
+Mixed base primer. 
+
+NP_H3 Forward 1.8 primer NCR Hamming Distances 
 ```{r}
-NP_H3_R <-read.csv("hamming_distance_results/NP_H3_NP_Reverse_2.3_results_NCR.csv")
+NP_H3_F2 <-read.csv("hamming_distance_results/NP_H3_NP_Forward_1.8_results_NCR.csv")
 
-NP_H3_2 <- NP_H3_R[-c(5046),]
+NP_H3_2 <- NP_H3_F2[-c(4617, 4618, 4619),]
 
-barplot(table(NP_H3_2$hamming_distance), xlab = "Hamming Distance", ylab = "Number of Sequences", ylim = c(0,5500))
+barplot(table(NP_H3_2$hamming_distance), xlab = "Hamming Distance", ylab = "Number of Sequences", ylim = c(0, 5000))
+```
+
+NP Forward 1.8 primer: AGC AAA AGC AGG GTT GAT AAT CAC TCA 
+
+Specific for H3Nx strains. 
+
+
+NP_H3 Reverse 2.5 primer NCR Hamming Distance Results 
+```{r}
+NP_H3_R <-read.csv("hamming_distance_results/NP_H3_NP_Reverse_2.5_results_NCR.csv")
+
+NP_H3_3 <- NP_H3_R[-c(4617),]
+
+barplot(table(NP_H3_3$hamming_distance), xlab = "Hamming Distance", ylab = "Number of Sequences", ylim = c(0,5500))
 
 ```
 

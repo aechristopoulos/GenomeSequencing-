@@ -1,0 +1,169 @@
+---
+title: "MP NCR Hamming Distances"
+author: "Alexandra Christopoulos"
+date: "2023-03-15"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(root.dir = "C:/Users/Lexie Christopoulos/Repos/GenomeSequencing-/db/", echo = TRUE)
+```
+
+#in console: setwd("C:/Users/Lexie Christopoulos/Repos/GenomeSequencing-/db/MP")
+
+MP_H1 Forward 1.4 primer NCR Hamming Distances 
+```{r}
+MP_H1_F <- read.csv("hamming_distance_results/MP_H1_MP_Forward_1.4_results_NCR.csv")
+
+MP_H1_1 <- MP_H1_F[-c(3990, 3991, 3992),]
+
+barplot(table(MP_H1_1$hamming_distance), xlab = "Hamming Distance", ylab = "Number of Sequences", ylim = c(0,4500))
+```
+
+MP Forward 1.4 primer: AGC AAA AGC AGG TAG ATG TTT AAA GAT GAG 
+ 
+This primer is specific for MP H1Nx, H7N9, and H9N2 strains of Influenza A. The primer consists of the universal non-coding region the rest of the non-coding region, and the start of the coding region specific to the MP segment of H1Nx, H7N9, and H9N2 strains of Influenza.  
+
+MP_H1 Forward 1.6 primer NCR Hamming Distances 
+```{r}
+MP_H1_F <- read.csv("hamming_distance_results/MP_H1_MP_Forward_1.6_results_NCR.csv")
+
+MP_H1_2 <- MP_H1_F[-c(3990, 3991, 3992),]
+
+barplot(table(MP_H1_2$hamming_distance), xlab = "Hamming Distance", ylab = "Number of Sequences", ylim = c(0,4500))
+```
+
+MP Forward 1.6 primer: AGC AAA AGC AGG TAG ATR TTK AAA GAT GAG 
+
+This primer is universal for all MP segments of Influenza A. It will work with any strain of the virus. It is a mixed-base primer, having a mixed-base in two positions. This means that the hamming distances are actually 0 and 1 (working on fixing the code to not count mixed-bases as a mismatch). The primer consists of the universal non-coding region, the rest of the non-coding region, and the start of the coding region for the MP segment of all strains of Influenza. 
+
+
+MP_H1 Reverse 2.2 primer NCR Hamming Distances 
+```{r}
+MP_H1_R <- read.csv("hamming_distance_results/MP_H1_MP_Reverse_2.2_results_NCR.csv")
+
+MP_H1_3 <- MP_H1_R[-c(3990),]
+
+barplot(table(MP_H1_3$hamming_distance), xlab = "Hamming Distance", ylab = "Number of Sequences", ylim = c(0,4500))
+```
+
+MP_H3 Forward 1.5 primer NCR Hamming Distances 
+```{r}
+MP_H3_F <- read.csv("hamming_distance_results/MP_H3_MP_Forward_1.5_results_NCR.csv")
+
+MP_H3_1 <- MP_H3_F[-c(7002, 7003, 7004),]
+
+barplot(table(MP_H3_1$hamming_distance), xlab = "Hamming Distance", ylab = "Number of Sequences", ylim = c(0,7000))
+
+```
+
+MP_H3 Forward 1.6 primer NCR Hamming Distances 
+```{r}
+MP_H3_F2 <- read.csv("hamming_distance_results/MP_H3_MP_Forward_1.6_results_NCR.csv")
+
+MP_H3_2 <- MP_H3_F2[-c(7002, 7003, 7004),]
+
+barplot(table(MP_H3_2$hamming_distance), xlab = "Hamming Distance", ylab = "Number of Sequences", ylim = c(0,7000))
+
+```
+ Mixed base primer. 
+
+
+MP_H3 Reverse 2.2 primer NCR Hamming Distances 
+```{r}
+MP_H3_R <- read.csv("hamming_distance_results/MP_H3_MP_Reverse_2.2_results_NCR.csv")
+
+MP_H3_3 <- MP_H3_R[-c(7002),]
+
+barplot(table(MP_H3_3$hamming_distance), xlab = "Hamming Distance", ylab = "Number of Sequences", ylim = c(0,7500))
+```
+
+MP_H5 Forward 1.5 primer NCR Hamming Distances 
+```{r}
+MP_H5_F <- read.csv("hamming_distance_results/MP_H5_MP_Forward_1.5_results_NCR.csv")
+
+MP_H5_1 <- MP_H5_F[-c(16, 17, 18),]
+
+barplot(table(MP_H5_1$hamming_distance), xlab = "Hamming Distance", ylab = "Number of Sequences", ylim = c(0,10))
+
+```
+
+MP_H5 Forward 1.6 primer NCR Hamming Distances 
+```{r}
+MP_H5_F2 <- read.csv("hamming_distance_results/MP_H5_MP_Forward_1.6_results_NCR.csv")
+
+MP_H5_2 <- MP_H5_F2[-c(16, 17, 18),]
+
+barplot(table(MP_H5_2$hamming_distance), xlab = "Hamming Distance", ylab = "Number of Sequences", ylim = c(0,15))
+
+```
+
+
+MP_H5 Reverse 2.2 primer NCR Hamming Distances 
+```{r}
+MP_H5_R <-read.csv("hamming_distance_results/MP_H5_MP_Reverse_2.2_results_NCR.csv")
+
+MP_H5_3 <- MP_H5_R[-c(16),]
+
+barplot(table(MP_H5_3$hamming_distance), xlab = "Hamming Distance", ylab = "Number of Sequences", ylim = c(0,20))
+```
+
+MP_H7 Forward 1.4 primer NCR Hamming Distances 
+```{r}
+MP_H7_F <- read.csv("hamming_distance_results/MP_H7_MP_Forward_1.4_results_NCR.csv")
+
+MP_H7_1 <- MP_H7_F[-c(185, 186, 187),]
+
+barplot(table(MP_H7_1$hamming_distance), xlab = "Hamming Distance", ylab = "Number of Sequences", ylim = c(0,150))
+
+```
+
+MP_H7 Forward 1.6 primer NCR Hamming Distances 
+```{r}
+MP_H7_F2 <- read.csv("hamming_distance_results/MP_H7_MP_Forward_1.6_results_NCR.csv")
+
+MP_H7_2 <- MP_H7_F2[-c(185, 186, 187),]
+
+barplot(table(MP_H7_2$hamming_distance), xlab = "Hamming Distance", ylab = "Number of Sequences", ylim = c(0,140))
+
+```
+
+
+
+MP_H7 Reverse 2.2 primer NCR Hamming Distances 
+```{r}
+MP_H7_R <- read.csv("hamming_distance_results/MP_H7_MP_Reverse_2.2_results_NCR.csv")
+
+MP_H7_3 <- MP_H7_R[-c(185),]
+
+barplot(table(MP_H7_3$hamming_distance), xlab = "Hamming Distance", ylab = "Number of Sequences", ylim = c(0,200))
+
+```
+
+MP_H9 Forward 1.4 primer NCR Hamming Distances 
+```{r}
+MP_H9_F <- read.csv("hamming_distance_results/MP_H9_MP_Forward_1.4_results_NCR.csv")
+
+MP_H9_1 <- MP_H9_F[-c(33, 34, 35),]
+
+barplot(table(MP_H9_1$hamming_distance), xlab = "Hamming Distance", ylab = "Number of Sequences", ylim = c(0,35))
+```
+
+MP_H9 Forward 1.6 primer NCR Hamming Distances 
+```{r}
+MP_H9_F2 <- read.csv("hamming_distance_results/MP_H9_MP_Forward_1.6_results_NCR.csv")
+
+MP_H9_2 <- MP_H9_F2[-c(33, 34, 35),]
+
+barplot(table(MP_H9_2$hamming_distance), xlab = "Hamming Distance", ylab = "Number of Sequences", ylim = c(0,35))
+```
+
+MP_H9 Reverse 2.2 primer NCR Hamming Distances 
+```{r}
+MP_H9_R <- read.csv("hamming_distance_results/MP_H9_MP_Reverse_2.2_results_NCR.csv")
+
+MP_H9_3 <- MP_H9_R[-c(33),]
+
+barplot(table(MP_H9_3$hamming_distance), xlab = "Hamming Distance", ylab = "Number of Sequences", ylim = c(0,40))
+```
+

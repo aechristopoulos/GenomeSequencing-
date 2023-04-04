@@ -12,113 +12,117 @@ knitr::opts_chunk$set(root.dir = "C:/Users/Lexie Christopoulos/Repos/GenomeSeque
 
 #in console: setwd("C:/Users/Lexie Christopoulos/Repos/GenomeSequencing-/db/HA")
 
-HA_H1 Forward 1.6 primer NCR hamming distances 
+HA_H1 Forward 1.11 primer NCR hamming distances 
 ```{r}
-HA_H1_F1 <-read.csv("hamming_distance_results/HA_H1_HA_Forward_1.6_results_NCR.csv")
+HA_H1_F1 <-read.csv("hamming_distance_results/HA_H1_HA_Forward_1.11_results_NCR.csv")
 
-HA_H1_1 <- HA_H1_F1[-c(4023, 4024, 4025),]
+HA_H1_1 <- HA_H1_F1[-c(3560, 3561),]
 
 barplot(table(HA_H1_1$hamming_distance), xlab = "Hamming Distance", ylab = "Number of Sequences", ylim = c(0,3500))
 ```
+HA Forward 1.11 primer: GAT CAG CAA AAG CAG GGG AAA ACA AA
 
-HA_H1 Forward 1.7 primer NCR Hamming Distances 
+This primer is specific for HA H1Nx strains of Influenza A. It includes a 4 nucleotide long 5' tail to enhance the primer. This 5' tail was not included in the hamming distance calculations. The rest of the primer consists of the universal non-coding region and part of the non-coding region that is unique to the HA segment for H1Nx strains. 
+
+
+HA_H1 Reverse 2.7 primer NCR Hamming Distances 
 ```{r}
-HA_H1_F2 <-read.csv("hamming_distance_results/HA_H1_HA_Forward_1.7_results_NCR.csv")
+HA_H1_R <-read.csv("hamming_distance_results/HA_H1_HA_Reverse_2.7_results_NCR.csv")
 
-HA_H1_2 <- HA_H1_F2[-c(4023, 4024, 4025),]
-
-barplot(table(HA_H1_2$hamming_distance), xlab = "Hamming Distance", ylab = "Number of Sequences",ylim = c(0,3500))
-```
-
-HA_H1 Reverse 2.3 primer NCR Hamming Distances 
-```{r}
-HA_H1_R <-read.csv("hamming_distance_results/HA_H1_HA_Reverse_2.3_results_NCR.csv")
-
-HA_H1_3 <- HA_H1_R[-c(4023,4024),]
+HA_H1_3 <- HA_H1_R[-c(3560),]
 
 barplot(table(HA_H1_3$hamming_distance), xlab = "Hamming Distance", ylab = "Number of Sequences", ylim = c(0,4000))
 ```
+HA Reverse 2.7 primer: GCG ACT AGT AGA AAC AAG GGT GTT TTT
 
-HA_H3 Forward 1.6 primer NCR Hamming Distances 
+This primer is universal for all HA segments of Influenza A. It will work with any strain of the virus. It includes a 6 nucleotide long 5' tail to enhance the primer. This 5' tail was not included in the hamming distance calculations. The rest of the primer consists of the universal non-coding region and part of the non-coding region that is unqiue to HA segments of influenza. 
+
+
+
+HA_H3 Forward 1.12 primer NCR Hamming Distances 
 ```{r}
-HA_H3_F1 <-read.csv("hamming_distance_results/HA_H3_HA_Forward_1.6_results_NCR.csv")
+HA_H3_F1 <-read.csv("hamming_distance_results/HA_H3_HA_Forward_1.12_results_NCR.csv")
 
-HA_H3_1 <- HA_H3_F1[-c(5490, 5491, 5492),]
+HA_H3_1 <- HA_H3_F1[-c(5445, 5446),]
 
 barplot(table(HA_H3_1$hamming_distance), xlab = "Hamming Distance", ylab = "Number of Sequences", ylim = c(0,5000))
 
 ```
+HA Forward 1.12 primer: GAT CAG CAA AAG CAG GGG ATA ATT CTA T
 
-HA_H3 Forward 1.7 primer NCR Hamming Distances 
+This primer is specific for HA H3Nx strains of Influenza A. It includes a 4 nucleotide long 5' tail to enhance the primer. This 5' tail was not included in the hamming distance calculations. The rest of the primer consists of the universal non-coding region and part of the non-coding region that is unique to the HA segment for H3Nx strains.
+
+
+HA_H3 Reverse 2.7 primer NCR Hamming Distances 
 ```{r}
-HA_H3_F2 <-read.csv("hamming_distance_results/HA_H3_HA_Forward_1.7_results_NCR.csv")
+HA_H3_R <-read.csv("hamming_distance_results/HA_H3_HA_Reverse_2.7_results_NCR.csv")
 
-HA_H3_2 <- HA_H3_F2[-c(5490, 5491, 5492),]
-
-barplot(table(HA_H3_2$hamming_distance), xlab = "Hamming Distance", ylab = "Number of Sequences",ylim = c(0,5000))
-```
-
-HA_H3 Reverse 2.3 primer NCR Hamming Distances 
-```{r}
-HA_H3_R <-read.csv("hamming_distance_results/HA_H3_HA_Reverse_2.3_results_NCR.csv")
-
-HA_H3_3 <- HA_H3_R[-c(5490, 5491),]
+HA_H3_3 <- HA_H3_R[-c(5445),]
 
 barplot(table(HA_H3_3$hamming_distance), xlab = "Hamming Distance", ylab = "Number of Sequences", ylim = c(0,6000))
 ```
 
-HA_H5 Forward 1.6 primer NCR Hamming Distances 
-```{r}
-HA_H5_F1 <-read.csv("hamming_distance_results/HA_H5_HA_Forward_1.6_results_NCR.csv")
+HA Reverse 2.7 primer: GCG ACT AGT AGA AAC AAG GGT GTT TTT
 
-HA_H5_1 <- HA_H5_F1[-c(19, 20, 21),]
+This primer is universal for all HA segments of Influenza A. It will work with any strain of the virus. It includes a 6 nucleotide long 5' tail to enhance the primer. This 5' tail was not included in the hamming distance calculations. The rest of the primer consists of the universal non-coding region and part of the non-coding region that is unqiue to HA segments of influenza.
+
+
+HA_H5 Forward 1.11 primer NCR Hamming Distances 
+```{r}
+HA_H5_F1 <-read.csv("hamming_distance_results/HA_H5_HA_Forward_1.11_results_NCR.csv")
+
+HA_H5_1 <- HA_H5_F1[-c(15, 16),]
 
 barplot(table(HA_H5_1$hamming_distance), xlab = "Hamming Distance", ylab = "Number of Sequences",ylim = c(0,15))
 ```
 
-HA_H5 Forward 1.7 primer NCR Hamming Distances 
+HA_H5 Forward 1.12 primer NCR Hamming Distances 
 ```{r}
-HA_H5_F2 <-read.csv("hamming_distance_results/HA_H5_HA_Forward_1.7_results_NCR.csv")
+HA_H5_F2 <-read.csv("hamming_distance_results/HA_H5_HA_Forward_1.12_results_NCR.csv")
 
-HA_H5_2 <- HA_H5_F2[-c(19, 20, 21),]
+HA_H5_2 <- HA_H5_F2[-c(15, 16),]
 
-barplot(table(HA_H5_2$hamming_distance), xlab = "Hamming Distance", ylab = "Number of Sequences",ylim = c(0,10))
+barplot(table(HA_H5_2$hamming_distance), xlab = "Hamming Distance", ylab = "Number of Sequences",ylim = c(0,15))
 ```
 
-HA_H5 Reverse 2.3 primer NCR Hamming Distances 
+HA_H5 Reverse 2.7 primer NCR Hamming Distances 
 ```{r}
-HA_H5_R <-read.csv("hamming_distance_results/HA_H5_HA_Reverse_2.3_results_NCR.csv")
+HA_H5_R <-read.csv("hamming_distance_results/HA_H5_HA_Reverse_2.7_results_NCR.csv")
 
-HA_H5_3 <- HA_H5_R[-c(19, 20),]
+HA_H5_3 <- HA_H5_R[-c(15),]
 
 barplot(table(HA_H5_3$hamming_distance), xlab = "Hamming Distance", ylab = "Number of Sequences", ylim = c(0,15))
 ```
+HA Reverse 2.7 primer: GCG ACT AGT AGA AAC AAG GGT GTT TTT
 
-HA_H7 Forward 1.6 primer NCR Hamming Distances 
+This primer is universal for all HA segments of Influenza A. It will work with any strain of the virus. It includes a 6 nucleotide long 5' tail to enhance the primer. This 5' tail was not included in the hamming distance calculations. The rest of the primer consists of the universal non-coding region and part of the non-coding region that is unqiue to HA segments of influenza.
+
+
+HA_H7 Forward 1.11 primer NCR Hamming Distances 
 ```{r}
-HA_H7_F1 <-read.csv("hamming_distance_results/HA_H7_HA_Forward_1.6_results_NCR.csv")
+HA_H7_F1 <-read.csv("hamming_distance_results/HA_H7_HA_Forward_1.11_results_NCR.csv")
 
-HA_H7_1 <- HA_H7_F1[-c(68, 69, 70),]
+HA_H7_1 <- HA_H7_F1[-c(60, 61),]
 
-barplot(table(HA_H7_1$hamming_distance), xlab = "Hamming Distance", ylab = "Number of Sequences",ylim = c(0,70))
+barplot(table(HA_H7_1$hamming_distance), xlab = "Hamming Distance", ylab = "Number of Sequences",ylim = c(0,60))
 ```
 
-HA_H7 Forward 1.7 primer NCR Hamming Distances 
+HA_H7 Forward 1.12 primer NCR Hamming Distances 
 ```{r}
-HA_H7_F2 <-read.csv("hamming_distance_results/HA_H7_HA_Forward_1.7_results_NCR.csv")
+HA_H7_F2 <-read.csv("hamming_distance_results/HA_H7_HA_Forward_1.12_results_NCR.csv")
 
-HA_H7_2 <- HA_H7_F2[-c(68, 69, 70),]
+HA_H7_2 <- HA_H7_F2[-c(60,61),]
 
 barplot(table(HA_H7_2$hamming_distance), xlab = "Hamming Distance", ylab = "Number of Sequences",ylim = c(0,50))
 ```
 
-HA_H7 Reverse 2.3 primer NCR Hamming Distances 
+HA_H7 Reverse 2.7 primer NCR Hamming Distances 
 ```{r}
-HA_H7_R <-read.csv("hamming_distance_results/HA_H7_HA_Reverse_2.3_results_NCR.csv")
+HA_H7_R <-read.csv("hamming_distance_results/HA_H7_HA_Reverse_2.7_results_NCR.csv")
 
-HA_H7_3 <- HA_H7_R[-c(68, 69),]
+HA_H7_3 <- HA_H7_R[-c(60),]
 
-barplot(table(HA_H7_1$hamming_distance), xlab = "Hamming Distance", ylab = "Number of Sequences",ylim = c(0,50))
+barplot(table(HA_H7_3$hamming_distance), xlab = "Hamming Distance", ylab = "Number of Sequences",ylim = c(0,0))
 ```
 
 HA_H9 Forward 1.6 primer NCR Hamming Distances 
