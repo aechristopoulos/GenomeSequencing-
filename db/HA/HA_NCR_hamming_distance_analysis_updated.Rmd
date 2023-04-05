@@ -50,6 +50,8 @@ barplot(table(HA_H1_3$hamming_distance),main = "HA H1N1 Hamming Distances, rever
 
 **HA Reverse 2.7 primer**: *GCG ACT* **AGT AGA AAC AAG G**GT GTT TTT
 
+**Reverse compliment (without 5'tail)**: AAA AAC A**CC CTT GTT TCT ACT**
+
 **Melting temperature**: 57.4ºC 
 
 **Hairpins** (ΔG < -1): 3
@@ -103,6 +105,8 @@ barplot(table(HA_H3_4$hamming_distance), main = "HA H3N8 Hamming Distances , rev
 
 **HA Reverse 2.7 primer**: *GCG ACT* **AGT AGA AAC AAG G**GT GTT TTT
 
+**Reverse compliment (without 5'tail)**: AAA AAC A**CC CTT GTT TCT ACT**
+
 **Melting temperature**: 57.4ºC
 
 **Hairpins** (ΔG < -1): 3
@@ -149,6 +153,8 @@ barplot(table(HA_H5_3$hamming_distance), main = "HA H5Nx Hamming Distances, reve
 ```
 
 **HA Reverse 2.7 primer**: *GCG ACT* **AGT AGA AAC AAG G**GT GTT TTT
+
+**Reverse compliment (without 5'tail)**: AAA AAC A**CC CTT GTT TCT ACT**
 
 **Melting temperature**: 57.4ºC 
 
@@ -199,6 +205,8 @@ barplot(table(HA_H7_3$hamming_distance), main = "HA H7N9 Hamming Distances, reve
 
 **HA Reverse 2.7 primer**: *GCG ACT* **AGT AGA AAC AAG G**GT GTT TTT
 
+**Reverse compliment (without 5'tail)**: AAA AAC A**CC CTT GTT TCT ACT**
+
 **Melting temperature**: 57.4ºC  
 
 **Hairpins** (ΔG < -1): 3
@@ -245,6 +253,8 @@ barplot(table(HA_H9_3$hamming_distance), main = "HA H9N2 Hamming Distances, reve
 ```
 
 **HA Reverse 2.7 primer**: *GCG ACT* **AGT AGA AAC AAG G**GT GTT TTT
+
+**Reverse compliment (without 5'tail)**: AAA AAC A**CC CTT GTT TCT ACT**
 
 **Melting temperature**: 57.4ºC
 
