@@ -106,7 +106,7 @@ forward_primers("AGCAAAAGCAGGTAGATATTGAAAGATGAG", "MP_Forward_1.5", "MP forward 
 forward_primers("AGCAAAAGCAGGTAGATRTTKAAAGATGAG", "MP_Forward_1.6", "MP forward universal NCR primer, mixed base")
 # # reverse
 # reverse_primers("AGACAGGATCAGTAGAAACAAGGTAGTT", "MP_Reverse_2.1", "MP reverse primer")
-reverse_primers("AAGTAGAAACAAGGTAGTTTTTACT", "MP_Reverse_2.2", "MP reverse universal NCR primer, 5' tail not included here")
+reverse_primers("AGTAGAAACAAGGTAGTTTTTTACT", "MP_Reverse_2.2", "MP reverse universal NCR primer, 5' tail not included here")
 
 
 # #NS primers: 
