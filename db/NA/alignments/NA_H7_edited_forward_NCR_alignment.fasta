@@ -349,10 +349,8 @@ ATCACAATAGGCGCAATCACAGTACTCATTGGAATAGCAAACCTAGGATTGAACATAGGA
 CTGCATCTAAAATCGGGCTGCAATTGCTCACGCTCACAACCTGAAACAACCAACACAAGC
 CAAACAATAATAAACAACTA
 >NA_Forward_1.3 NA forward NCR primer for strains H1, H3, and H9, 5' tail not included here
-AG----------------------------------------------------------
--------------------------------------CAAAAGCAGGAGT----------
-------------------------------------------------------------
---------------------
+AGCAAAAGCAGGAGT---------------------------------------------
+---------------------------------------------
 >NA_Forward_1.4 NA forward NCR primer for strains H5 and H7, 5' tail not included here
 AGCAAAAGCAGGGT----------------------------------------------
 ------------------------------------------------------------

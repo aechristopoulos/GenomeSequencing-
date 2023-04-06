@@ -95,8 +95,8 @@ forward_primers("AGCAAAAGCAGGGT", "NA_Forward_1.4", "NA forward NCR primer for s
 
 # # reverse
 # reverse_primers("CGCATATTAGTAGAAACAAGGAGTT", "NA_Reverse_2.1", "NA enhanced reverse primer, includes part of noncoding region and enchanced 5' prime tail")
-reverse_primers("AGTAGAAACAAGGAGTT", "NA_Reverse_2.2", "NA reverse NCR primer for strains H1, H3, H7, and H9, 5' tail not included here")
-reverse_primers("AGTAGAAACAAGGGTGT", "NA_Reverse_2.3", "NA reverse NCR primer for H5 strains, 5' tail not included here")
+reverse_primers("AGTAGAAACAAGGAGTT", "NA_Reverse_2.2", "NA reverse NCR primer for strains H1, H3, and H9, 5' tail not included here")
+reverse_primers("AGTAGAAACAAGGGTST", "NA_Reverse_2.3", "NA reverse NCR primer for H5, H7, and some H1 strains, 5' tail not included here")
 
 # #MP primers: 
 # # forward 
