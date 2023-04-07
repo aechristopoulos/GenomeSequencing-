@@ -55,7 +55,7 @@ forward_primers("AGCAAAAGCAGGTACTGATYCAAAATG", "PA_Forward_1.7", "PA forward uni
 
 # # reverse
 # reverse_primers("GGACAGTATGGATAGCAAATAGTAGCA", "PA_Reverse_2.4", "PA reverse primer")
-reverse_primers("AGTAGAAACAAGGTACTTTTTTGGACA", "PA_Reverse_2.7", "PA reverse universal NCR primer, 5' tail not included here")
+reverse_primers("AGTAGAAACAAGGTACTTTTTT", "PA_Reverse_2.7", "PA reverse universal NCR primer, 5' tail not included here")
 
 
 # #HA primers: 

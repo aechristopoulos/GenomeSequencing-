@@ -1,0 +1,264 @@
+---
+title: "NS NCR Hamming Distances Updated"
+author: "Alexandra Christopoulos"
+date: "2023-04-06"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(root.dir = "C:/Users/Lexie Christopoulos/Repos/GenomeSequencing-/db/", echo = TRUE)
+```
+
+```{r, include=FALSE}
+#in console: setwd("C:/Users/Lexie Christopoulos/Repos/GenomeSequencing-/db/NS")
+```
+
+
+## NS H1Nx Forward 1.4 primer NCR hamming distances 
+
+```{r}
+NS_H1_F <- read.csv("hamming_distance_results/NS_H1_NS_Forward_1.4_results_NCR.csv")
+
+NS_H1_1 <- NS_H1_F[-c(2817),]
+
+barplot(table(NS_H1_1$hamming_distance), main = "NS H1NX hamming distances, forward primer", xlab = "Hamming Distance", ylab = "Number of Sequences", ylim = c(0,3000))
+```
+
+**NS Forward 1.4 primer**: *AG***A GCA AAA GCA GG**G TGAC AAA 
+
+**Melting temperature**: 57.4ºC 
+
+**Hairpins** (ΔG < -1): 0 
+
+**Self-dimers** (ΔG < -6): 0
+
+**Heterodimers** (ΔG < -6): 0
+
+
+This primer is universal for the NS segment of all strains of Influenza A. The primer includes a 2 nucleotide long 5' tail (*italized*) that is not based on the sequences in order to increase the melting temperature and improve other factors of the primer; this tail was not included in the hamming distance calculations. The primer consists of the universal non-coding region (AGC AAA AGC AGG, **bolded**), and part of the non-coding region that is unique to the NS segment. Based on the alignment shade threshold and hamming distance calculations, 89% of NP H1Nx sequences will have a hamming distance of 0 with this primer. 2,815 H1N1 sequences and 1 H1N2 sequence were used for this alignment and calculations.
+
+
+## NS H1Nx Reverse 2.2 primer NCR hamming distances 
+
+```{r}
+NS_H1_R <- read.csv("hamming_distance_results/NS_H1_NS_Reverse_2.2_results_NCR.csv")
+
+NS_H1_2 <- NS_H1_R[-c(2817),]
+
+barplot(table(NS_H1_2$hamming_distance), main = "NS H1Nx hamming distances, reverse primer", xlab = "Hamming Distance", ylab = "Number of Sequences", ylim = c(0,3000))
+```   
+
+**NS Reverse 2.2 primer**: *ACG CAT* **AGT AGA AAC AAG G**GT GTT 
+
+
+**Reverse compliment (without 5' tail)**: AAC AC**C CTT GTT TCT ACT**
+
+**Melting temperature**: 56.5ºC 
+
+**Hairpins** (ΔG < -1): 1
+
+**Self-dimers** (ΔG < -6): 0
+
+**Heterodimers** (ΔG < -6): 0
+
+This primer is universal for all NS segments of all strains of Influenza A. The reverse compliment of this primer was used for the alignments and hamming distance calculations. The primer includes a 6 nucleotide long 5' tail (*italized*) that is not based on the sequences in order to increase the melting temperature and improve other factors of the primer; this tail was not included in the hamming distance calculations. The rest of the primer consists of the universal non-coding region (AGT AGA AAC AAG G, **bolded**) and part of the non-coding region that is unique to the NS segments. Based on the alignment shade threshold and hamming distance calculations, 100% of NS H1Nx sequences will have a hamming distance of 0 with this primer. 2,815 H1N1 sequences and 1 H1N2 sequence were used for this alignment and calculations.
+
+
+## NS H3Nx Forward 1.4 primer NCR hamming distances 
+
+```{r}
+NS_H3_F <- read.csv("hamming_distance_results/NS_H3_NS_Forward_1.4_results_NCR.csv")
+
+NS_H3_1 <- NS_H3_F[-c(4662),]
+
+barplot(table(NS_H3_1$hamming_distance), main = "NS H3NX hamming distances, forward primer", xlab = "Hamming Distance", ylab = "Number of Sequences", ylim = c(0,5000))
+```
+
+**NS Forward 1.4 primer**: *AG***A GCA AAA GCA GG**G TGAC AAA 
+
+**Melting temperature**: 57.4ºC 
+
+**Hairpins** (ΔG < -1): 0 
+
+**Self-dimers** (ΔG < -6): 0
+
+**Heterodimers** (ΔG < -6): 0
+
+
+This primer is universal for the NS segment of all strains of Influenza A. The primer includes a 2 nucleotide long 5' tail (*italized*) that is not based on the sequences in order to increase the melting temperature and improve other factors of the primer; this tail was not included in the hamming distance calculations. The primer consists of the universal non-coding region (AGC AAA AGC AGG, **bolded**), and part of the non-coding region that is unique to the NS segment. Based on the alignment shade threshold and hamming distance calculations, 91% of NP H3Nx sequences will have a hamming distance of 0 with this primer. 4654 H3N2 and 7 H3N8 sequences were used for this alignment and calculations.
+
+
+
+## NS H3Nx Reverse 2.2 primer NCR hamming distances 
+
+```{r}
+NS_H3_R <- read.csv("hamming_distance_results/NS_H3_NS_Reverse_2.2_results_NCR.csv")
+
+NS_H3_2 <- NS_H3_R[-c(4662),]
+
+barplot(table(NS_H3_R$hamming_distance), main = "NS H3NX hamming distances, reverse primer", xlab = "Hamming Distance", ylab = "Number of Sequences", ylim = c(0,5000))
+```
+
+**NS Reverse 2.2 primer**: *ACG CAT* **AGT AGA AAC AAG G**GT GTT 
+
+**Reverse compliment (without 5' tail)**: AAC AC**C CTT GTT TCT ACT**
+
+**Melting temperature**: 56.5ºC 
+
+**Hairpins** (ΔG < -1): 1
+
+**Self-dimers** (ΔG < -6): 0
+
+**Heterodimers** (ΔG < -6): 0
+
+This primer is universal for all NS segments of all strains of Influenza A. The reverse compliment of this primer was used for the alignments and hamming distance calculations. The primer includes a 6 nucleotide long 5' tail (*italized*) that is not based on the sequences in order to increase the melting temperature and improve other factors of the primer; this tail was not included in the hamming distance calculations. The rest of the primer consists of the universal non-coding region (AGT AGA AAC AAG G, **bolded**) and part of the non-coding region that is unique to the NS segments. Based on the alignment shade threshold and hamming distance calculations, 99% of NS H3Nx sequences will have a hamming distance of 0 with this primer. 4654 H3N2 and 7 H3N8 sequences were used for this alignment and calculations.
+
+## NS H5Nx Forward 1.4 primer NCR hamming distances 
+
+```{r}
+NS_H5_F <- read.csv("hamming_distance_results/NS_H5_NS_Forward_1.4_results_NCR.csv")
+
+NS_H5_1 <- NS_H5_F[-c(7),]
+
+barplot(table(NS_H5_1$hamming_distance), main = "NS H5NX hamming distances, forward primer", xlab = "Hamming Distance", ylab = "Number of Sequences", ylim = c(0,5))
+```
+
+**NS Forward 1.4 primer**: *AG***A GCA AAA GCA GG**G TGAC AAA 
+
+**Melting temperature**: 57.4ºC 
+
+**Hairpins** (ΔG < -1): 0 
+
+**Self-dimers** (ΔG < -6): 0
+
+**Heterodimers** (ΔG < -6): 0
+
+
+This primer is universal for the NS segment of all strains of Influenza A. The primer includes a 2 nucleotide long 5' tail (*italized*) that is not based on the sequences in order to increase the melting temperature and improve other factors of the primer; this tail was not included in the hamming distance calculations. The primer consists of the universal non-coding region (AGC AAA AGC AGG, **bolded**), and part of the non-coding region that is unique to the NS segment. Based on the alignment shade threshold and hamming distance calculations, 71% of NP H5Nx sequences will have a hamming distance of 0 with this primer. 3 H5N6 sequences, 2 H5N1 sequences and 1 H5N8 sequence were used for this alignment and calculations.
+
+
+## NS H5Nx Reverse 2.2 primer NCR hamming distances 
+
+```{r}
+NS_H5_R <- read.csv("hamming_distance_results/NS_H5_NS_Reverse_2.2_results_NCR.csv")
+
+NS_H5_2 <- NS_H5_R[-c(7),]
+
+barplot(table(NS_H5_2$hamming_distance), main = "NS H5NX hamming distances, reverse primer", xlab = "Hamming Distance", ylab = "Number of Sequences", ylim = c(0,10))
+```
+
+**NS Reverse 2.2 primer**: *ACG CAT* **AGT AGA AAC AAG G**GT GTT 
+
+**Reverse compliment (without 5' tail)**: AAC AC**C CTT GTT TCT ACT**
+
+**Melting temperature**: 56.5ºC 
+
+**Hairpins** (ΔG < -1): 1
+
+**Self-dimers** (ΔG < -6): 0
+
+**Heterodimers** (ΔG < -6): 0
+
+This primer is universal for all NS segments of all strains of Influenza A. The reverse compliment of this primer was used for the alignments and hamming distance calculations. The primer includes a 6 nucleotide long 5' tail (*italized*) that is not based on the sequences in order to increase the melting temperature and improve other factors of the primer; this tail was not included in the hamming distance calculations. The rest of the primer consists of the universal non-coding region (AGT AGA AAC AAG G, **bolded**) and part of the non-coding region that is unique to the NS segments. Based on the alignment shade threshold and hamming distance calculations, 100% of NS H5Nx sequences will have a hamming distance of 0 with this primer. 3 H5N6 sequences, 2 H5N1 sequences and 1 H5N8 sequence were used for this alignment and calculations.
+
+
+## NS H7N9 Forward 1.4 primer NCR hamming distances 
+
+```{r}
+NS_H7_F <- read.csv("hamming_distance_results/NS_H7_NS_Forward_1.4_results_NCR.csv")
+
+NS_H7_1 <- NS_H7_F[-c(92),]
+
+barplot(table(NS_H7_1$hamming_distance), main = "NS H7N9 hamming distances, forward primer", xlab = "Hamming Distance", ylab = "Number of Sequences", ylim = c(0,80))
+```
+
+**NS Forward 1.4 primer**: *AG***A GCA AAA GCA GG**G TGAC AAA 
+
+**Melting temperature**: 57.4ºC 
+
+**Hairpins** (ΔG < -1): 0 
+
+**Self-dimers** (ΔG < -6): 0
+
+**Heterodimers** (ΔG < -6): 0
+
+
+This primer is universal for the NS segment of all strains of Influenza A. The primer includes a 2 nucleotide long 5' tail (*italized*) that is not based on the sequences in order to increase the melting temperature and improve other factors of the primer; this tail was not included in the hamming distance calculations. The primer consists of the universal non-coding region (AGC AAA AGC AGG, **bolded**), and part of the non-coding region that is unique to the NS segment. Based on the alignment shade threshold and hamming distance calculations, 84% of NP H7N9 sequences will have a hamming distance of 0 with this primer. 91 H7N9 sequences were used for this alignment and calculations.
+
+
+## NS H7N9 Reverse 2.2 primer NCR hamming distances 
+
+```{r}
+NS_H7_R <- read.csv("hamming_distance_results/NS_H7_NS_Reverse_2.2_results_NCR.csv")
+
+NS_H7_2 <- NS_H7_R[-c(92),]
+
+barplot(table(NS_H7_2$hamming_distance), main = "NS H7N9 hamming distances, reverse primer", xlab = "Hamming Distance", ylab = "Number of Sequences", ylim = c(0,100))
+
+```
+
+**NS Reverse 2.2 primer**: *ACG CAT* **AGT AGA AAC AAG G**GT GTT 
+
+**Reverse compliment (without 5' tail)**: AAC AC**C CTT GTT TCT ACT**
+
+**Melting temperature**: 56.5ºC 
+
+**Hairpins** (ΔG < -1): 1
+
+**Self-dimers** (ΔG < -6): 0
+
+**Heterodimers** (ΔG < -6): 0
+
+This primer is universal for all NS segments of all strains of Influenza A. The reverse compliment of this primer was used for the alignments and hamming distance calculations. The primer includes a 6 nucleotide long 5' tail (*italized*) that is not based on the sequences in order to increase the melting temperature and improve other factors of the primer; this tail was not included in the hamming distance calculations. The rest of the primer consists of the universal non-coding region (AGT AGA AAC AAG G, **bolded**) and part of the non-coding region that is unique to the NS segments. Based on the alignment shade threshold and hamming distance calculations, 100% of NS H7N9 sequences will have a hamming distance of 0 with this primer. 91 H7N9 sequences were used for this alignment and calculations.
+
+
+## NS H9N2 Forward 1.4 primer NCR hamming distances 
+
+```{r}
+NS_H9_F <- read.csv("hamming_distance_results/NS_H9_NS_Forward_1.4_results_NCR.csv")
+
+NS_H9_1 <- NS_H9_F[-c(30),]
+
+barplot(table(NS_H9_1$hamming_distance), main = "NS H9N2 hamming distances, forward primer", xlab = "Hamming Distance", ylab = "Number of Sequences", ylim = c(0,30))
+```
+
+**NS Forward 1.4 primer**: *AG***A GCA AAA GCA GG**G TGAC AAA 
+
+**Melting temperature**: 57.4ºC 
+
+**Hairpins** (ΔG < -1): 0 
+
+**Self-dimers** (ΔG < -6): 0
+
+**Heterodimers** (ΔG < -6): 0
+
+
+This primer is universal for the NS segment of all strains of Influenza A. The primer includes a 2 nucleotide long 5' tail (*italized*) that is not based on the sequences in order to increase the melting temperature and improve other factors of the primer; this tail was not included in the hamming distance calculations. The primer consists of the universal non-coding region (AGC AAA AGC AGG, **bolded**), and part of the non-coding region that is unique to the NS segment. Based on the alignment shade threshold and hamming distance calculations, 100% of NP H9N2 sequences will have a hamming distance of 0 with this primer. 29 H9N2 sequences were used for this alignment and calculations.
+
+
+## NS H9N2 Reverse 2.2 primer NCR hamming distances 
+
+```{r}
+NS_H9_R <- read.csv("hamming_distance_results/NS_H9_NS_Reverse_2.2_results_NCR.csv")
+
+NS_H9_2 <- NS_H9_R[-c(30),]
+
+barplot(table(NS_H9_2$hamming_distance), main = "NS H9N2 hamming distances, reverse primer", xlab = "Hamming Distance", ylab = "Number of Sequences", ylim = c(0,30))
+```
+
+**NS Reverse 2.2 primer**: *ACG CAT* **AGT AGA AAC AAG G**GT GTT 
+
+**Reverse compliment (without 5' tail)**: AAC AC**C CTT GTT TCT ACT**
+
+**Melting temperature**: 56.5ºC 
+
+**Hairpins** (ΔG < -1): 1
+
+**Self-dimers** (ΔG < -6): 0
+
+**Heterodimers** (ΔG < -6): 0
+
+This primer is universal for all NS segments of all strains of Influenza A. The reverse compliment of this primer was used for the alignments and hamming distance calculations. The primer includes a 6 nucleotide long 5' tail (*italized*) that is not based on the sequences in order to increase the melting temperature and improve other factors of the primer; this tail was not included in the hamming distance calculations. The rest of the primer consists of the universal non-coding region (AGT AGA AAC AAG G, **bolded**) and part of the non-coding region that is unique to the NS segments. Based on the alignment shade threshold and hamming distance calculations, 100% of NS H9N2 sequences will have a hamming distance of 0 with this primer. 29 H9N2 sequences were used for this alignment and calculations.
+
+
+In total, **7,603 sequences** were used to design the NS primers. These sequences were downloaded from the NCBI Influenza database and the GSAID Influenza database. They were chosen based on length (had to include the non-coding regions) and quality of the sequence. 
