@@ -16,6 +16,7 @@ ENV PATH=$CONDA_DIR/bin:$PATH
 #install ete
 RUN conda create -n ete3 python=3
 RUN activate ete3
+RUN conda install -c etetoolkit ete3 ete_toolchain
 
 Workdir /app 
 
