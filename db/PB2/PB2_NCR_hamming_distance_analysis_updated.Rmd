@@ -1,0 +1,387 @@
+---
+title: "PB2 NCR Hamming Distances Updated"
+author: "Alexandra Christopoulos"
+date: "2023-04-07"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(root.dir = "C:/Users/Lexie Christopoulos/Repos/GenomeSequencing-/db/", echo = TRUE)
+```
+
+```{r, include=FALSE}
+#in console: setwd("C:/Users/Lexie Christopoulos/Repos/GenomeSequencing-/db/PB2")
+```
+
+
+## PB2 H1N1 Forward 1.2 primer NCR hamming distances 
+
+```{r}
+PB2_H1_F1 <- read.csv("hamming_distance_results/PB2_H1_PB2_Forward_1.2_results_NCR.csv")
+
+PB2_H1_1 <- PB2_H1_F1[-c(2418, 2419, 2420),]
+
+barplot(table(PB2_H1_1$hamming_distance), main = "PB2 H1N1 hamming distances, forward 1.2 primer", xlab = "Hamming Distance", ylab = "Number of Sequences", ylim = c(0,2500))
+```
+
+**PB2 Forward 1.2 primer**: *CGA CT***A GCA AAA GCA GG**T CAA *A*TA TAT TCA 
+
+**Melting temperature**: 57.2ºC 
+
+**Hairpins** (ΔG < -1): 0
+
+**Self-dimers** (ΔG < -6): 1
+
+**Heterodimers** (ΔG < -6): 1
+
+
+This primer is specific for the PB2 segment of H1N1, H5Nx H7N9, and H9N2 strains of Influenza A. The nucleotide differences from the H3Nx strains is noted in *italics*. The primer includes a 5 nucleotide long 5' tail (*italized*) that is not based on the sequences in order to increase the melting temperature and improve other factors of the primer; this tail was not included in the hamming distance calculations. The rest of the primer consists of the universal non-coding region (AGC AAA AGC AGG, **bolded**), and part of the non-coding region that is unique to the PB2 segments. Based on the alignment shade threshold and hamming distance calculations, 83% of PB2 H1N1 sequences will have a hamming distance of 0 with this primer. 2,417 H1N1 sequences were used for this alignment and calculations.
+
+
+## PB2 H1N1 Forward 1.4 primer NCR hamming distances 
+
+```{r}
+PB2_H1_F2 <- read.csv("hamming_distance_results/PB2_H1_PB2_Forward_1.4_results_NCR.csv")
+
+PB2_H1_2 <- PB2_H1_F2[-c(2418, 2419, 2420),]
+
+barplot(table(PB2_H1_2$hamming_distance), main = "PB2 H1N1 hamming distances, forward 1.4 primer", xlab = "Hamming Distance", ylab = "Number of Sequences", ylim = c(0,2500))
+```
+
+**PB2 Forward 1.4 primer**: CGA CTA GCA AAA GCA GGT CAA *W*TA TAT TCA 
+
+**Melting temperature**: 57.2ºC 
+
+**Hairpins** (ΔG < -1): 0
+
+**Self-dimers** (ΔG < -6): 1
+
+**Heterodimers** (ΔG < -6): 1
+
+
+This primer universal for the PB2 segment of all strains of Influenza A. It is a mixed-base primer, with the mixed-base noted in *italics*.**Due to it being a mixed-base, the code reads the mixed-base nucleotides as mismatches. (I am working on fixing this issue and will update this once it is fixed.) Therefore, the actual hamming distances for this primer are 0 and 1 rather than 1 and 2.** The primer includes a 5 nucleotide long 5' tail (*italized*) that is not based on the sequences in order to increase the melting temperature and improve other factors of the primer; this tail was not included in the hamming distance calculations. The rest of the primer consists of the universal non-coding region (AGC AAA AGC AGG, **bolded**), and part of the non-coding region that is unique to the PB2 segments. Based on the alignment shade threshold and hamming distance calculations, 83% of PB2 H1N1 sequences will have a hamming distance of 0 with this primer. 2,417 H1N1 sequences were used for this alignment and calculations.**I think we should use this primer*
+
+
+## PB2 H1N1 Reverse 2.4 primer NCR hamming distances 
+
+```{r}
+PB2_H1_R <- read.csv("hamming_distance_results/PB2_H1_PB2_Reverse_2.4_results_NCR.csv")
+
+PB2_H1_3 <- PB2_H1_R[-c(2418),]
+
+barplot(table(PB2_H1_3$hamming_distance), main = "PB2 H1N1 hamming distances, reverse primer", xlab = "Hamming Distance", ylab = "Number of Sequences", ylim = c(0,2500))
+```
+
+**PA Reverse 2.7 primer**: *ACA CTG* **AGT AGA AAC AAG G**TC GTT TTT AAA C
+
+**Reverse compliment (without 5' tail)**: G TTT AAA AAC GA**C CTT GTT TCT ACT**
+
+**Melting temperature**: 57.5ºC 
+
+**Hairpins** (ΔG < -1): 0 
+
+**Self-dimers** (ΔG < -6): 1
+
+**Heterodimers** (ΔG < -6): 1 (with all forward primers)
+
+This primer is universal for all PB2 segments of all strains of Influenza A. The reverse compliment of this primer was used for the alignments and hamming distance calculations. The primer includes a 6 nucleotide long 5' tail (*italized*) that is not based on the sequences in order to increase the melting temperature and improve other factors of the primer; this tail was not included in the hamming distance calculations. The rest of the primer consists of the universal non-coding region (AGT AGA AAC AAG G, **bolded**) and part of the non-coding region that is unique to the PB2 segments. Based on the alignment shade threshold and hamming distance calculations, 97% of PB2 H1N1 sequences will have a hamming distance of 0 with this primer. 2,417 H1N1 sequences were used for this alignment and calculations.
+
+
+## PB2 H3Nx Forward 1.3 primer NCR hamming distances 
+
+```{r}
+PB2_H3_F1 <- read.csv("hamming_distance_results/PB2_H3_PB2_Forward_1.3_results_NCR.csv")
+
+PB2_H3_1 <- PB2_H3_F1[-c(4158, 4159, 4160),]
+
+barplot(table(PB2_H3_1$hamming_distance), main = "PB2 H3Nx hamming distances, forward 1.3 primer", xlab = "Hamming Distance", ylab = "Number of Sequences", ylim = c(0,4000))
+```
+
+**PB2 Forward 1.3 primer**: *CGA CT***A GCA AAA GCA GG**T CAA *T*TA TAT TCA 
+
+**Melting temperature**: 57.2ºC 
+
+**Hairpins** (ΔG < -1): 0
+
+**Self-dimers** (ΔG < -6): 0
+
+**Heterodimers** (ΔG < -6): 1
+
+
+This primer is specific for the PB2 segment of H3Nx strains of Influenza A. The nucleotide differences from the other strains is noted in *italics*. The primer includes a 5 nucleotide long 5' tail (*italized*) that is not based on the sequences in order to increase the melting temperature and improve other factors of the primer; this tail was not included in the hamming distance calculations. The rest of the primer consists of the universal non-coding region (AGC AAA AGC AGG, **bolded**), and part of the non-coding region that is unique to the PB2 segments. Based on the alignment shade threshold and hamming distance calculations, 89% of PB2 H3Nx sequences will have a hamming distance of 0 with this primer. 4,153 H3N2 and 4 H3N8 sequences were used for this alignment and calculations.
+
+
+## PB2 H3Nx Forward 1.4 primer NCR hamming distances 
+
+```{r}
+PB2_H3_F2 <- read.csv("hamming_distance_results/PB2_H3_PB2_Forward_1.4_results_NCR.csv")
+
+PB2_H3_2 <- PB2_H3_F2[-c(4158, 4159, 4160),]
+
+barplot(table(PB2_H3_2$hamming_distance), main = "PB2 H3Nx hamming distances, forward 1.4 primer", xlab = "Hamming Distance", ylab = "Number of Sequences", ylim = c(0,4000))
+```
+
+**PB2 Forward 1.4 primer**: CGA CTA GCA AAA GCA GGT CAA *W*TA TAT TCA 
+
+**Melting temperature**: 57.2ºC 
+
+**Hairpins** (ΔG < -1): 0
+
+**Self-dimers** (ΔG < -6): 1
+
+**Heterodimers** (ΔG < -6): 1
+
+
+This primer universal for the PB2 segment of all strains of Influenza A. It is a mixed-base primer, with the mixed-base noted in *italics*.**Due to it being a mixed-base, the code reads the mixed-base nucleotides as mismatches. (I am working on fixing this issue and will update this once it is fixed.) Therefore, the actual hamming distances for this primer are 0 and 1 rather than 1 and 2.** The primer includes a 5 nucleotide long 5' tail (*italized*) that is not based on the sequences in order to increase the melting temperature and improve other factors of the primer; this tail was not included in the hamming distance calculations. The rest of the primer consists of the universal non-coding region (AGC AAA AGC AGG, **bolded**), and part of the non-coding region that is unique to the PB2 segments. Based on the alignment shade threshold and hamming distance calculations, 89% of PB2 H3Nx sequences will have a hamming distance of 0 with this primer. 4,153 H3N2 and 4 H3N8 sequences were used for this alignment and calculations.**I think we should use this primer* 
+
+
+## PB2 H3Nx Reverse 2.4 primer NCR hamming distances 
+
+```{r}
+PB2_H3_R <- read.csv("hamming_distance_results/PB2_H3_PB2_Reverse_2.4_results_NCR.csv")
+
+PB2_H3_3 <- PB2_H3_R[-c(4158),]
+
+barplot(table(PB2_H3_3$hamming_distance), main = "PB2 H3Nx hamming distances, reverse primer", xlab = "Hamming Distance", ylab = "Number of Sequences", ylim = c(0,5000))
+```
+
+**PA Reverse 2.7 primer**: *ACA CTG* **AGT AGA AAC AAG G**TC GTT TTT AAA C
+
+**Reverse compliment (without 5' tail)**: G TTT AAA AAC GA**C CTT GTT TCT ACT**
+
+**Melting temperature**: 57.5ºC 
+
+**Hairpins** (ΔG < -1): 0 
+
+**Self-dimers** (ΔG < -6): 1
+
+**Heterodimers** (ΔG < -6): 1 (with all forward primers)
+
+This primer is universal for all PB2 segments of all strains of Influenza A. The reverse compliment of this primer was used for the alignments and hamming distance calculations. The primer includes a 6 nucleotide long 5' tail (*italized*) that is not based on the sequences in order to increase the melting temperature and improve other factors of the primer; this tail was not included in the hamming distance calculations. The rest of the primer consists of the universal non-coding region (AGT AGA AAC AAG G, **bolded**) and part of the non-coding region that is unique to the PB2 segments. Based on the alignment shade threshold and hamming distance calculations, 98% of PB2 H3Nx sequences will have a hamming distance of 0 with this primer.  4,153 H3N2 and 4 H3N8 sequences were used for this alignment and calculations.
+
+
+## PB2 H5Nx Forward 1.2 primer NCR hamming distances 
+
+```{r}
+PB2_H5_F1 <- read.csv("hamming_distance_results/PB2_H5_PB2_Forward_1.2_results_NCR.csv")
+
+PB2_H5_1 <- PB2_H5_F1[-c(8, 9, 10),]
+
+barplot(table(PB2_H5_1$hamming_distance), main = "PB2 H5Nx hamming distances, forward 1.2 primer", xlab = "Hamming Distance", ylab = "Number of Sequences", ylim = c(0,5))
+```
+
+**PB2 Forward 1.2 primer**: *CGA CT***A GCA AAA GCA GG**T CAA *A*TA TAT TCA 
+
+**Melting temperature**: 57.2ºC 
+
+**Hairpins** (ΔG < -1): 0
+
+**Self-dimers** (ΔG < -6): 1
+
+**Heterodimers** (ΔG < -6): 1
+
+
+This primer is specific for the PB2 segment of H1N1, H5Nx H7N9, and H9N2 strains of Influenza A. The nucleotide differences from the H3Nx strains is noted in *italics*. The primer includes a 5 nucleotide long 5' tail (*italized*) that is not based on the sequences in order to increase the melting temperature and improve other factors of the primer; this tail was not included in the hamming distance calculations. The rest of the primer consists of the universal non-coding region (AGC AAA AGC AGG, **bolded**), and part of the non-coding region that is unique to the PB2 segments. Based on the alignment shade threshold and hamming distance calculations, 70% of PB2 H5Nx sequences will have a hamming distance of 0 with this primer. 5 H5N6 sequences, 1 H5N1 sequence, and 1 H5N8 sequence were used for this alignment and calculations.
+
+
+## PB2 H5Nx Forward 1.4 primer NCR hamming distances 
+
+```{r}
+PB2_H5_F2 <- read.csv("hamming_distance_results/PB2_H5_PB2_Forward_1.4_results_NCR.csv")
+
+PB2_H5_2 <- PB2_H5_F2[-c(8, 9, 10),]
+
+barplot(table(PB2_H5_2$hamming_distance), main = "PB2 H5Nx hamming distances, forward 1.4 primer", xlab = "Hamming Distance", ylab = "Number of Sequences", ylim = c(0,5))
+```
+
+**PB2 Forward 1.4 primer**: CGA CTA GCA AAA GCA GGT CAA *W*TA TAT TCA 
+
+**Melting temperature**: 57.2ºC 
+
+**Hairpins** (ΔG < -1): 0
+
+**Self-dimers** (ΔG < -6): 1
+
+**Heterodimers** (ΔG < -6): 1
+
+
+This primer universal for the PB2 segment of all strains of Influenza A. It is a mixed-base primer, with the mixed-base noted in *italics*.**Due to it being a mixed-base, the code reads the mixed-base nucleotides as mismatches. (I am working on fixing this issue and will update this once it is fixed.) Therefore, the actual hamming distances for this primer are 0 and 1 rather than 1 and 2.** The primer includes a 5 nucleotide long 5' tail (*italized*) that is not based on the sequences in order to increase the melting temperature and improve other factors of the primer; this tail was not included in the hamming distance calculations. The rest of the primer consists of the universal non-coding region (AGC AAA AGC AGG, **bolded**), and part of the non-coding region that is unique to the PB2 segments. Based on the alignment shade threshold and hamming distance calculations, 70% of PB2 H5Nx sequences will have a hamming distance of 0 with this primer. 5 H5N6 sequences, 1 H5N1 sequence, and 1 H5N8 sequence were used for this alignment and calculations. **I think we should use this primer*
+
+
+## PB2 H5Nx Reverse 2.4 primer NCR hamming distances 
+
+```{r}
+PB2_H5_R <- read.csv("hamming_distance_results/PB2_H5_PB2_Reverse_2.4_results_NCR.csv")
+
+PB2_H5_3 <- PB2_H5_R[-c(8),]
+
+barplot(table(PB2_H5_3$hamming_distance), main = "PB2 H5Nx hamming distances, reverse primer", xlab = "Hamming Distance", ylab = "Number of Sequences", ylim = c(0,5))
+```
+
+**PA Reverse 2.7 primer**: *ACA CTG* **AGT AGA AAC AAG G**TC GTT TTT AAA C
+
+**Reverse compliment (without 5' tail)**: G TTT AAA AAC GA**C CTT GTT TCT ACT**
+
+**Melting temperature**: 57.5ºC 
+
+**Hairpins** (ΔG < -1): 0 
+
+**Self-dimers** (ΔG < -6): 1
+
+**Heterodimers** (ΔG < -6): 1 (with all forward primers)
+
+This primer is universal for all PB2 segments of all strains of Influenza A. The reverse compliment of this primer was used for the alignments and hamming distance calculations. The primer includes a 6 nucleotide long 5' tail (*italized*) that is not based on the sequences in order to increase the melting temperature and improve other factors of the primer; this tail was not included in the hamming distance calculations. The rest of the primer consists of the universal non-coding region (AGT AGA AAC AAG G, **bolded**) and part of the non-coding region that is unique to the PB2 segments. Based on the alignment shade threshold and hamming distance calculations, 75% of PB2 H5Nx sequences will have a hamming distance of 0 with this primer. 1 H5N1 sequence, and 1 H5N8 sequence were used for this alignment and calculations. 
+
+
+## PB2 H7N9 Forward 1.2 primer NCR hamming distances 
+
+```{r}
+PB2_H7_F1 <- read.csv("hamming_distance_results/PB2_H7_PB2_Forward_1.2_results_NCR.csv")
+
+PB2_H7_1 <- PB2_H7_F1[-c(44, 45, 46),]
+
+barplot(table(PB2_H7_1$hamming_distance), main = "PB2 H7N9 hamming distances, forward 1.2 primer", xlab = "Hamming Distance", ylab = "Number of Sequences", ylim = c(0,25))
+```
+
+**PB2 Forward 1.2 primer**: *CGA CT***A GCA AAA GCA GG**T CAA *A*TA TAT TCA 
+
+**Melting temperature**: 57.2ºC 
+
+**Hairpins** (ΔG < -1): 0
+
+**Self-dimers** (ΔG < -6): 1
+
+**Heterodimers** (ΔG < -6): 1
+
+
+This primer is specific for the PB2 segment of H1N1, H5Nx H7N9, and H9N2 strains of Influenza A. The nucleotide differences from the H3Nx strains is noted in *italics*. The primer includes a 5 nucleotide long 5' tail (*italized*) that is not based on the sequences in order to increase the melting temperature and improve other factors of the primer; this tail was not included in the hamming distance calculations. The rest of the primer consists of the universal non-coding region (AGC AAA AGC AGG, **bolded**), and part of the non-coding region that is unique to the PB2 segments. Based on the alignment shade threshold and hamming distance calculations, 58% of PB2 H7N9 sequences will have a hamming distance of 0 with this primer. 43 H7N9 sequences were used for this alignment and calculations.
+
+
+## PB2 H7N9 Forward 1.4 primer NCR hamming distances 
+
+```{r}
+PB2_H7_F2 <- read.csv("hamming_distance_results/PB2_H7_PB2_Forward_1.4_results_NCR.csv")
+
+PB2_H7_2 <- PB2_H7_F2[-c(44, 45, 46),]
+
+barplot(table(PB2_H7_2$hamming_distance), main = "PB2 H7N9 hamming distances, forward 1.4 primer", xlab = "Hamming Distance", ylab = "Number of Sequences", ylim = c(0,25))
+```
+
+**PB2 Forward 1.4 primer**: CGA CTA GCA AAA GCA GGT CAA *W*TA TAT TCA 
+
+**Melting temperature**: 57.2ºC 
+
+**Hairpins** (ΔG < -1): 0
+
+**Self-dimers** (ΔG < -6): 1
+
+**Heterodimers** (ΔG < -6): 1
+
+
+This primer universal for the PB2 segment of all strains of Influenza A. It is a mixed-base primer, with the mixed-base noted in *italics*.**Due to it being a mixed-base, the code reads the mixed-base nucleotides as mismatches. (I am working on fixing this issue and will update this once it is fixed.) Therefore, the actual hamming distances for this primer are 0 and 1 rather than 1 and 2.** The primer includes a 5 nucleotide long 5' tail (*italized*) that is not based on the sequences in order to increase the melting temperature and improve other factors of the primer; this tail was not included in the hamming distance calculations. The rest of the primer consists of the universal non-coding region (AGC AAA AGC AGG, **bolded**), and part of the non-coding region that is unique to the PB2 segments. Based on the alignment shade threshold and hamming distance calculations, 58% of PB2 H7N9 sequences will have a hamming distance of 0 with this primer. 43 H7N9 sequences were used for this alignment and calculations. 
+**I think we should use this primer*
+
+
+## PB2 H7N9 Reverse 2.4 primer NCR hamming distances 
+
+```{r}
+PB2_H7_R <- read.csv("hamming_distance_results/PB2_H7_PB2_Reverse_2.4_results_NCR.csv")
+
+PB2_H7_3 <- PB2_H7_R[-c(44, 45, 46),]
+
+barplot(table(PB2_H7_3$hamming_distance), main = "PB2 H7N9 hamming distances, reverse primer", xlab = "Hamming Distance", ylab = "Number of Sequences", ylim = c(0,50))
+```
+
+**PA Reverse 2.7 primer**: *ACA CTG* **AGT AGA AAC AAG G**TC GTT TTT AAA C
+
+**Reverse compliment (without 5' tail)**: G TTT AAA AAC GA**C CTT GTT TCT ACT**
+
+**Melting temperature**: 57.5ºC 
+
+**Hairpins** (ΔG < -1): 0 
+
+**Self-dimers** (ΔG < -6): 1
+
+**Heterodimers** (ΔG < -6): 1 (with all forward primers)
+
+
+This primer is universal for all PB2 segments of all strains of Influenza A. The reverse compliment of this primer was used for the alignments and hamming distance calculations. The primer includes a 6 nucleotide long 5' tail (*italized*) that is not based on the sequences in order to increase the melting temperature and improve other factors of the primer; this tail was not included in the hamming distance calculations. The rest of the primer consists of the universal non-coding region (AGT AGA AAC AAG G, **bolded**) and part of the non-coding region that is unique to the PB2 segments. Based on the alignment shade threshold and hamming distance calculations, 100% of PB2 H7N9 sequences will have a hamming distance of 0 with this primer. 43 H7N9 sequences were used for this alignment and calculations.
+
+
+## PB2 H9N2 Forward 1.2 primer NCR hamming distances 
+
+```{r}
+PB2_H9_F1 <- read.csv("hamming_distance_results/PB2_H9_PB2_Forward_1.2_results_NCR.csv")
+
+PB2_H9_1 <- PB2_H9_F1[-c(9, 10, 11),]
+
+barplot(table(PB2_H9_1$hamming_distance), main = "PB2 H9N2 hamming distances, forward 1.2 primer", xlab = "Hamming Distance", ylab = "Number of Sequences", ylim = c(0,10))
+```
+
+**PB2 Forward 1.2 primer**: *CGA CT***A GCA AAA GCA GG**T CAA *A*TA TAT TCA 
+
+**Melting temperature**: 57.2ºC 
+
+**Hairpins** (ΔG < -1): 0
+
+**Self-dimers** (ΔG < -6): 1
+
+**Heterodimers** (ΔG < -6): 1
+
+
+This primer is specific for the PB2 segment of H1N1, H5Nx H7N9, and H9N2 strains of Influenza A. The nucleotide differences from the H3Nx strains is noted in *italics*. The primer includes a 5 nucleotide long 5' tail (*italized*) that is not based on the sequences in order to increase the melting temperature and improve other factors of the primer; this tail was not included in the hamming distance calculations. The rest of the primer consists of the universal non-coding region (AGC AAA AGC AGG, **bolded**), and part of the non-coding region that is unique to the PB2 segments. Based on the alignment shade threshold and hamming distance calculations, 63% of PB2 H7N9 sequences will have a hamming distance of 1 with this primer. 8 H9N2 sequences were used for this alignment and calculations.
+
+
+## PB2 H9N2 Forward 1.4 primer NCR hamming distances 
+
+```{r}
+PB2_H9_F2 <- read.csv("hamming_distance_results/PB2_H9_PB2_Forward_1.4_results_NCR.csv")
+
+PB2_H9_2 <- PB2_H9_F2[-c(9, 10, 11),]
+
+barplot(table(PB2_H9_2$hamming_distance), main = "PB2 H9N2 hamming distances, forward 1.4 primer", xlab = "Hamming Distance", ylab = "Number of Sequences", ylim = c(0,10))
+```
+
+**PB2 Forward 1.4 primer**: CGA CTA GCA AAA GCA GGT CAA *W*TA TAT TCA 
+
+**Melting temperature**: 57.2ºC 
+
+**Hairpins** (ΔG < -1): 0
+
+**Self-dimers** (ΔG < -6): 1
+
+**Heterodimers** (ΔG < -6): 1
+
+
+This primer universal for the PB2 segment of all strains of Influenza A. It is a mixed-base primer, with the mixed-base noted in *italics*.**Due to it being a mixed-base, the code reads the mixed-base nucleotides as mismatches. (I am working on fixing this issue and will update this once it is fixed.) Therefore, the actual hamming distances for this primer are 0 and 1 rather than 1 and 2.** The primer includes a 5 nucleotide long 5' tail (*italized*) that is not based on the sequences in order to increase the melting temperature and improve other factors of the primer; this tail was not included in the hamming distance calculations. The rest of the primer consists of the universal non-coding region (AGC AAA AGC AGG, **bolded**), and part of the non-coding region that is unique to the PB2 segments. Based on the alignment shade threshold and hamming distance calculations, 63% of PB2 H7N9 sequences will have a hamming distance of 1 with this primer. 8 H9N2 sequences were used for this alignment and calculations. 
+**I think we should use this primer*
+
+
+## PB2 H9N2 Reverse 2.4 primer NCR hamming distances 
+
+```{r}
+PB2_H9_R <- read.csv("hamming_distance_results/PB2_H9_PB2_Reverse_2.4_results_NCR.csv")
+
+PB2_H9_3 <- PB2_H9_R[-c(9),]
+
+barplot(table(PB2_H9_3$hamming_distance), main = "PB2 H9N2 hamming distances, reverse primer", xlab = "Hamming Distance", ylab = "Number of Sequences", ylim = c(0,10))
+```
+
+**PA Reverse 2.7 primer**: *ACA CTG* **AGT AGA AAC AAG G**TC GTT TTT AAA C
+
+**Reverse compliment (without 5' tail)**: G TTT AAA AAC GA**C CTT GTT TCT ACT**
+
+**Melting temperature**: 57.5ºC 
+
+**Hairpins** (ΔG < -1): 0 
+
+**Self-dimers** (ΔG < -6): 1
+
+**Heterodimers** (ΔG < -6): 1 (with all forward primers)
+
+
+This primer is universal for all PB2 segments of all strains of Influenza A. The reverse compliment of this primer was used for the alignments and hamming distance calculations. The primer includes a 6 nucleotide long 5' tail (*italized*) that is not based on the sequences in order to increase the melting temperature and improve other factors of the primer; this tail was not included in the hamming distance calculations. The rest of the primer consists of the universal non-coding region (AGT AGA AAC AAG G, **bolded**) and part of the non-coding region that is unique to the PB2 segments. Based on the alignment shade threshold and hamming distance calculations, 100% of PB2 H9N2 sequences will have a hamming distance of 0 with this primer. 8 H9N2 sequences were used for this alignment and calculations.
+
+
+
+In total, **6,632 sequences** were used to design the PB2 primers. These sequences were downloaded from the NCBI Influenza databas and the GSAID Influenza database. They were chosen based on length (had to include the non-coding regions) and quality of the sequence. **I believe that using the Forward 1.4 primer (mixed-base) and Reverse 2.4 primer pair would be best.** However, we could also do a three primer pool with an equal concentration of Forward 1.2 and Forward 1.3, and Reverse 2.3.

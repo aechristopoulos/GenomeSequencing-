@@ -107,7 +107,7 @@ barplot(table(NP_H3_1$hamming_distance), main = "NP H3Nx hamming distances, forw
 
 **Heterodimers** (ΔG < -6): 0
 
-This primer is specific for the NP segment of H3Nx strains of Influenza A. The nucleotide differences from the other strains are noted in *italics*. The primer consists of the universal non-coding region (AGC AAA AGC AGG, **bolded**), and the rest of the non-coding region that is unique to the NP segments. Based on the alignment shade threshold and hamming distance calculations, 90% of NP H3Nx sequences will have a hamming distance of 0 with this primer. 4,613 H3N2 and 3 H3N8 sequences were used for this alignment and calculations.
+This primer is specific for the NP segment of H3Nx strains of Influenza A. The nucleotide differences from the other strains are noted in *italics*. The primer consists of the universal non-coding region (AGC AAA AGC AGG, **bolded**), and the rest of the non-coding region that is unique to the NP segments. Based on the alignment shade threshold and hamming distance calculations, 90% of NP H3Nx sequences will have a hamming distance of 0 with this primer. 4,613 H3N2 and 3 H3N8 (4,616 in total) sequences were used for this alignment and calculations.
 
 
 ## NP H3Nx Forward 1.7 primer NCR hamming distances 
@@ -131,7 +131,7 @@ barplot(table(NP_H3_2$hamming_distance), main = "NP H3Nx hamming distances, forw
 **Heterodimers** (ΔG < -6): 0
 
 
-This primer universal for the NP segment of all strains of Influenza A. It is a mixed-base primer, with the mixed-base noted in *italics*.**Due to it being a mixed-base, the code reads the mixed-base nucleotides as mismatches. (I am working on fixing this issue and will update this once it is fixed.) Therefore, the actual hamming distances for this primer are 0, 1, and 2 rather than 1, 2 and 3.** The primer consists of the universal non-coding region (AGC AAA AGC AGG, **bolded**), and the rest of the non-coding region that is unique to the NP segments. Based on the alignment shade threshold and hamming distance calculations, 90% of NP H3Nx sequences will have a hamming distance of 0 with this primer. 4,613 H3N2 and 3 H3N8 sequences were used for this alignment and calculations. **I think we should use this primer** 
+This primer universal for the NP segment of all strains of Influenza A. It is a mixed-base primer, with the mixed-base noted in *italics*.**Due to it being a mixed-base, the code reads the mixed-base nucleotides as mismatches. (I am working on fixing this issue and will update this once it is fixed.) Therefore, the actual hamming distances for this primer are 0, 1, and 2 rather than 1, 2 and 3.** The primer consists of the universal non-coding region (AGC AAA AGC AGG, **bolded**), and the rest of the non-coding region that is unique to the NP segments. Based on the alignment shade threshold and hamming distance calculations, 90% of NP H3Nx sequences will have a hamming distance of 0 with this primer. 4,613 H3N2 and 3 H3N8 (4,616 in total) sequences were used for this alignment and calculations. **I think we should use this primer** 
 
 
 ## NP H3Nx Reverse 2.5 primer NCR hamming distances 
@@ -156,7 +156,7 @@ barplot(table(NP_H3_3$hamming_distance), main = "NP H3Nx Hamming Distances, reve
 
 **Heterodimers** (ΔG < -6): 0 (with all forward primers)
 
-This primer is universal for all NP segments of all strains of Influenza A. The reverse compliment of this primer was used for the alignments and hamming distance calculations. The primer includes a 8 nucleotide long 5' tail (*italized*) that is not based on the sequences in order to increase the melting temperature and improve other factors of the primer; this tail was not included in the hamming distance calculations. The rest of the primer consists of the universal non-coding region (AGT AGA AAC AAG G, **bolded**) and part of the non-coding region that is unique to the NP segments. Based on the alignment shade threshold and hamming distance calculations, 99% of NP H3Nx sequences will have a hamming distance of 0 with this primer. 4,613 H3N2 and 3 H3N8 sequences were used for this alignment and calculations.
+This primer is universal for all NP segments of all strains of Influenza A. The reverse compliment of this primer was used for the alignments and hamming distance calculations. The primer includes a 8 nucleotide long 5' tail (*italized*) that is not based on the sequences in order to increase the melting temperature and improve other factors of the primer; this tail was not included in the hamming distance calculations. The rest of the primer consists of the universal non-coding region (AGT AGA AAC AAG G, **bolded**) and part of the non-coding region that is unique to the NP segments. Based on the alignment shade threshold and hamming distance calculations, 99% of NP H3Nx sequences will have a hamming distance of 0 with this primer. 4,613 H3N2 and 3 (4,616 in total) H3N8 sequences were used for this alignment and calculations.
 
 
 ## NP H5Nx Forward 1.6 primer NCR hamming distances 
@@ -180,7 +180,7 @@ barplot(table(NP_H5_1$hamming_distance), main = "NP H5Nx Hamming Distances, forw
 **Heterodimers** (ΔG < -6): 0
 
 
-This primer is specific for the NP segment of H1N1, H5Nx, H7N9, and H9N2 strains of Influenza A. The nucleotide differences from H3Nx strains are noted in *italics*. The primer consists of the universal non-coding region (AGC AAA AGC AGG, **bolded**), and the rest of the non-coding region that is unique to the NP segments. Based on the alignment shade threshold and hamming distance calculations, 100% of NP H5Nx sequences will have a hamming distance of 0 with this primer. 13 H5N6, 2 H5N1, and 1 H5N8 sequences were used for this alignment and calculations. 
+This primer is specific for the NP segment of H1N1, H5Nx, H7N9, and H9N2 strains of Influenza A. The nucleotide differences from H3Nx strains are noted in *italics*. The primer consists of the universal non-coding region (AGC AAA AGC AGG, **bolded**), and the rest of the non-coding region that is unique to the NP segments. Based on the alignment shade threshold and hamming distance calculations, 100% of NP H5Nx sequences will have a hamming distance of 0 with this primer. 13 H5N6, 2 H5N1, and 1 (16 in total) H5N8 sequences were used for this alignment and calculations. 
 
 
 ## NP H5Nx Forward 1.7 primer NCR hamming distances 
@@ -204,7 +204,7 @@ barplot(table(NP_H5_2$hamming_distance), main = "NP H5Nx Hamming Distances, forw
 **Heterodimers** (ΔG < -6): 0
 
 
-This primer universal for the NP segment of all strains of Influenza A. It is a mixed-base primer, with the mixed-base noted in *italics*.**Due to it being a mixed-base, the code reads the mixed-base nucleotides as mismatches. (I am working on fixing this issue and will update this once it is fixed.) Therefore, the actual hamming distance for this primer is 0 rather than 1.** The primer consists of the universal non-coding region (AGC AAA AGC AGG, **bolded**), and the rest of the non-coding region that is unique to the NP segments. Based on the alignment shade threshold and hamming distance calculations, 100% of NP H5Nx sequences will have a hamming distance of 0 with this primer. 13 H5N6, 2 H5N1, and 1 H5N8 sequences were used for this alignment and calculations.  **I think we should use this primer** 
+This primer universal for the NP segment of all strains of Influenza A. It is a mixed-base primer, with the mixed-base noted in *italics*.**Due to it being a mixed-base, the code reads the mixed-base nucleotides as mismatches. (I am working on fixing this issue and will update this once it is fixed.) Therefore, the actual hamming distance for this primer is 0 rather than 1.** The primer consists of the universal non-coding region (AGC AAA AGC AGG, **bolded**), and the rest of the non-coding region that is unique to the NP segments. Based on the alignment shade threshold and hamming distance calculations, 100% of NP H5Nx sequences will have a hamming distance of 0 with this primer. 13 H5N6, 2 H5N1, and 1 H5N8 (16 in total) sequences were used for this alignment and calculations.  **I think we should use this primer** 
 
 
 ## NP H5Nx Reverse 2.5 primer NCR hamming distances 
@@ -229,7 +229,7 @@ barplot(table(NP_H5_3$hamming_distance), main = "NP H5Nx Hamming Distances, reve
 
 **Heterodimers** (ΔG < -6): 0 (with all forward primers)
 
-This primer is universal for all NP segments of all strains of Influenza A. The reverse compliment of this primer was used for the alignments and hamming distance calculations. The primer includes a 8 nucleotide long 5' tail (*italized*) that is not based on the sequences in order to increase the melting temperature and improve other factors of the primer; this tail was not included in the hamming distance calculations. The rest of the primer consists of the universal non-coding region (AGT AGA AAC AAG G, **bolded**) and part of the non-coding region that is unique to the NP segments. Based on the alignment shade threshold and hamming distance calculations, 100% of NP H5Nx sequences will have a hamming distance of 0 with this primer. 13 H5N6, 2 H5N1, and 1 H5N8 sequences were used for this alignment and calculations.
+This primer is universal for all NP segments of all strains of Influenza A. The reverse compliment of this primer was used for the alignments and hamming distance calculations. The primer includes a 8 nucleotide long 5' tail (*italized*) that is not based on the sequences in order to increase the melting temperature and improve other factors of the primer; this tail was not included in the hamming distance calculations. The rest of the primer consists of the universal non-coding region (AGT AGA AAC AAG G, **bolded**) and part of the non-coding region that is unique to the NP segments. Based on the alignment shade threshold and hamming distance calculations, 100% of NP H5Nx sequences will have a hamming distance of 0 with this primer. 13 H5N6, 2 H5N1, and 1 H5N8( 16 in total) sequences were used for this alignment and calculations.
 
 
 ## NP H7N9 Forward 1.6 primer NCR hamming distances 

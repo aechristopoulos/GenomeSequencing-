@@ -191,7 +191,7 @@ barplot(table(NA_H7_1$hamming_distance), main = "NA H7N9 Hamming Distances, forw
 **Heterodimers** (ΔG < -6): 1 (with both reverse primers)
 
 
-This primer is specific for the NA segment of H5N1 and H7N9 strains of Influenza A. The primer includes a 6 nucleotide long 5' tail (*italized*) that is not based on the sequences in order to increase the melting temperature and improve other factors of the primer; this tail was not included in the hamming distance calculations. The rest of the primer consists of the universal non-coding region (AGC AAA AGC AGG, **bolded**),and part of the non-coding region that is unique to the NA segments. Based on the alignment shade threshold and hamming distance calculations, 73% of NA H5N6 sequences will have a hamming distance of 0 with this primer. 70 H7N9 sequences were used for this alignment and calculations. 
+This primer is specific for the NA segment of H5N1 and H7N9 strains of Influenza A. The primer includes a 6 nucleotide long 5' tail (*italized*) that is not based on the sequences in order to increase the melting temperature and improve other factors of the primer; this tail was not included in the hamming distance calculations. The rest of the primer consists of the universal non-coding region (AGC AAA AGC AGG, **bolded**),and part of the non-coding region that is unique to the NA segments. Based on the alignment shade threshold and hamming distance calculations, 73% of NA H7N9 sequences will have a hamming distance of 0 with this primer. 70 H7N9 sequences were used for this alignment and calculations. 
 
 
 ## NA H7N9 Reverse 2.3 primer NCR hamming distances 
@@ -207,7 +207,6 @@ barplot(table(NA_H7_2$hamming_distance), main = "NA H7N9 Hamming Distances, reve
 
 **NA Reverse 2.2 primer**: *GAT GCC* **AGT AGA AAC AAG G**GT *S*T
  
-
 **Reverse compliment (without 5' tail)**: A*G*A C**CC TTG TTT CTA CT**
 
 **Melting temperature**: 57ºC 
@@ -218,7 +217,7 @@ barplot(table(NA_H7_2$hamming_distance), main = "NA H7N9 Hamming Distances, reve
 
 **Heterodimers** (ΔG < -6): 1 (with all forward primers)
 
-This primer is specific for the NA segment of H5N6, H7N9, and some H1N1 strains of Influenza A. The reverse compliment of this primer was used for the alignments and hamming distance calculations. This is a mixed base primer, with the mixed base noted in *italics*. The nucleotide that is present in the H9N7 strains is noted in the reverse compliment sequence, also in *italics*. The primer includes a 6 nucleotide long 5' tail (*italized*) that is not based on the sequences in order to increase the melting temperature and improve other factors of the primer; this tail was not included in the hamming distance calculations. The rest of the primer consists of the universal non-coding region (AGT AGA AAC AAG G, **bolded**) and part of the non-coding region that is unique to the NA segments. Based on the alignment shade threshold and hamming distance calculations, 99% of NA H5N6 sequences will have a hamming distance of 0 with this primer. **Due to it being a mixed-base, the code reads the mixed-base nucleotides as mismatches. (I am working on fixing this issue and will update this once it is fixed.) Therefore, the actual hamming distance for this primer is 0 and not 1.** 70 H7N9 sequences were used for this alignment and calculations.
+This primer is specific for the NA segment of H5N6, H7N9, and some H1N1 strains of Influenza A. The reverse compliment of this primer was used for the alignments and hamming distance calculations. This is a mixed base primer, with the mixed base noted in *italics*. The nucleotide that is present in the H9N7 strains is noted in the reverse compliment sequence, also in *italics*. The primer includes a 6 nucleotide long 5' tail (*italized*) that is not based on the sequences in order to increase the melting temperature and improve other factors of the primer; this tail was not included in the hamming distance calculations. The rest of the primer consists of the universal non-coding region (AGT AGA AAC AAG G, **bolded**) and part of the non-coding region that is unique to the NA segments. Based on the alignment shade threshold and hamming distance calculations, 99% of NA H7N9 sequences will have a hamming distance of 0 with this primer. **Due to it being a mixed-base, the code reads the mixed-base nucleotides as mismatches. (I am working on fixing this issue and will update this once it is fixed.) Therefore, the actual hamming distance for this primer is 0 and not 1.** 70 H7N9 sequences were used for this alignment and calculations.
 
 
 ## NA H9N2 Forward 1.3 primer NCR hamming distances 
@@ -228,7 +227,7 @@ NA_H9_F <- read.csv("hamming_distance_results/NA_H9_NA_Forward_1.3_results_NCR.c
 
 NA_H9_1 <- NA_H9_F[-c(15, 16),]
 
-barplot(table(NA_H9_1$hamming_distance), main = "MP H9N2 Hamming Distances, forward 1.3 primer", xlab = "Hamming Distance", ylab = "Number of Sequences", ylim = c(0,15))
+barplot(table(NA_H9_1$hamming_distance), main = "NA H9N2 Hamming Distances, forward 1.3 primer", xlab = "Hamming Distance", ylab = "Number of Sequences", ylim = c(0,15))
 ```
 
 **NA Forward 1.3 primer**: *AGC ATC* **AGC AAA AGC AGG** AGT
@@ -241,7 +240,7 @@ barplot(table(NA_H9_1$hamming_distance), main = "MP H9N2 Hamming Distances, forw
 
 **Heterodimers** (ΔG < -6): 1 (with both reverse primers)
 
-This primer is specific for the NA segment of H1N1, H3N2, and H9N2 strains of Influenza A. The primer includes a 6 nucleotide long 5' tail (*italized*) that is not based on the sequences in order to increase the melting temperature and improve other factors of the primer; this tail was not included in the hamming distance calculations. The rest of the primer consists of the universal non-coding region (AGC AAA AGC AGG, **bolded**),and part of the non-coding region that is unique to the NA segments. Based on the alignment shade threshold and hamming distance calculations, 93% of NA H3N2 sequences will have a hamming distance of 0 with this primer. 14 H9N2 sequences were used for this alignment and calculations. 
+This primer is specific for the NA segment of H1N1, H3N2, and H9N2 strains of Influenza A. The primer includes a 6 nucleotide long 5' tail (*italized*) that is not based on the sequences in order to increase the melting temperature and improve other factors of the primer; this tail was not included in the hamming distance calculations. The rest of the primer consists of the universal non-coding region (AGC AAA AGC AGG, **bolded**),and part of the non-coding region that is unique to the NA segments. Based on the alignment shade threshold and hamming distance calculations, 93% of NA H9N2 sequences will have a hamming distance of 0 with this primer. 14 H9N2 sequences were used for this alignment and calculations. 
 
 
 ## NA H9N2 Reverse 2.2 primer NCR hamming distances 
@@ -269,4 +268,4 @@ barplot(table(NA_H9_2$hamming_distance), main = "NA H9N2 Hamming Distances, reve
 This primer is specific for the NA segment of H1N1, H3N2, and H9N2 strains of Influenza A. The reverse compliment of this primer was used for the alignments and hamming distance calculations. The primer includes a 7 nucleotide long 5' tail (*italized*) that is not based on the sequences in order to increase the melting temperature and improve other factors of the primer; this tail was not included in the hamming distance calculations. The rest of the primer consists of the universal non-coding region (AGT AGA AAC AAG G, **bolded**) and part of the non-coding region that is unique to the NA segments. Based on the alignment shade threshold and hamming distance calculations, 100% of NA H9N2 sequences will have a hamming distance of 0 with this primer. 14 H9N2 sequences were used for this alignment and calculations.
 
 
-In total, **4,819** sequences were used to design the NA primers. These sequences were downloaded from the NCBI Influenza database and the GSAID Influenza database. They were chosen based on length (had to include the non-coding regions) and quality of the sequence. I believe that a 4 primer pool of Forward 1.3 and 1.4 and Reverse 2.2 and 2.3 with all primers in equal concentration would be the best. 
+In total, **4,819** sequences were used to design the NA primers. These sequences were downloaded from the NCBI Influenza database and the GSAID Influenza database. They were chosen based on length (had to include the non-coding regions) and quality of the sequence. I believe that a **4 primer pool of Forward 1.3 and 1.4 and Reverse 2.2 and 2.3** with all primers in equal concentration would be the best. 
