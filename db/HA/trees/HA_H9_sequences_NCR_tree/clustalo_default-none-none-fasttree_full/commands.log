@@ -1,1 +1,0 @@
-Clustal-Omega	254c265fb6edfc9080dbebe481d95027	clustalo---threads-1	39d525d4f6c08dc76253d3120229c939	/root/anaconda3/envs/ete3/bin/ete3_apps/bin/clustalo --threads 1 -i /mnt/c/Users/Lexie Christopoulos/Repos/GenomeSequencing-/db/HA/trees/HA_H9_sequences_NCR_tree/input/7d5e249e63198de2877404a61718f7ee.100 -o clustalo_alg.fasta --outfmt fa

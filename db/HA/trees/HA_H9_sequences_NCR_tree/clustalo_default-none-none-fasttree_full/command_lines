@@ -1,1 +1,0 @@
-Thu May 11 16:58:25 2023	bfccbfc4992c756d8a15a2c80fa168f2	False	/root/anaconda3/envs/ete3/bin/ete3 -w standard_fasttree -n db/HA/sequences/HA_H9_sequences_NCR.fasta -o db/HA/trees/HA_H9_sequences_NCR_tree/ --clearall

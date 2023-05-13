@@ -13,17 +13,16 @@ RUN wget --quiet https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86
 # Put conda in path so we can use conda activate
 ENV PATH=$CONDA_DIR/bin:$PATH
 
+
 #install ete
 RUN conda create -n ete3 python=3
 RUN activate ete3
-RUN conda install -c etetoolkit ete3 ete_toolchain
 
 Workdir /app 
 
 COPY . . 
 
 RUN python -m pip install biopython matplotlib
-
 
 
 CMD ["/bin/bash"]
