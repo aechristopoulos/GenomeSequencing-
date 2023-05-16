@@ -47,7 +47,7 @@ def create_edited_sequence_tupple(path, filename):
 
 # creates sequences dictionary 
 def parse_sequences(path, sequence):
-    sequence_path = path + sequence + "/sequences/"
+    sequence_path = path + sequence + "/tree_sequences/"
     sequence_folder = os.scandir(sequence_path)
     sequences = []
     for entry in sequence_folder:
@@ -59,7 +59,7 @@ def parse_sequences(path, sequence):
 
 # creates edited sequences dictionary 
 def parse_edited_sequences(path, edited_sequence):
-    edited_sequence_path = path + edited_sequence + "/sequences/"
+    edited_sequence_path = path + edited_sequence + "/tree_sequences/"
     edited_sequence_folder = os.scandir(edited_sequence_path)
     edited_sequenes = []
     for entry in edited_sequence_folder:

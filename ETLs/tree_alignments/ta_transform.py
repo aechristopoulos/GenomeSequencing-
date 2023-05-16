@@ -33,6 +33,6 @@ def sequence_record_objects(edited_sequence_record_information):
 # edited forward sequences to .fasta files 
 def edited_sequences_fasta(segment, filename, sequence_records):
         edited_record =sequence_records 
-        SeqIO.write(edited_record, "db/" + segment + "/tree_sequences/" + filename, "fasta")
+        SeqIO.write(edited_record, "db/" + segment + "/edited_tree_sequences/" + filename, "fasta")
 
 

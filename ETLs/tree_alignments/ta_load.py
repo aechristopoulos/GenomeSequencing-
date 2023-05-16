@@ -23,7 +23,7 @@ def run_command(command):
 
 
 def clustalomega_alignment(segment, filename): 
-        in_file = "db/" + segment + "/tree_sequences/" + filename + ".fasta" 
+        in_file = "db/" + segment + "/edited_tree_sequences/" + filename + ".fasta" 
         out_file = "db/" + segment + "/tree_alignments/" + filename + "_alignment.fasta" 
         clustalomega_cline = ClustalOmegaCommandline(infile=in_file, outfile=out_file, verbose=True, auto=True)
         print(clustalomega_cline) 
