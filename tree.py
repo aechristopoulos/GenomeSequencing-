@@ -6,7 +6,7 @@ from Bio import AlignIO
 
 
 # Read the sequences and align
-align = AlignIO.read("db/HA/tree_alignments/HA_H1_edited_NCR_alignment.fasta", "fasta")
+align = AlignIO.read("db/MP/alignments/MP_H7_edited_forward_NCR_alignment.fasta", "fasta")
 
 
 
