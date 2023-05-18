@@ -11,7 +11,7 @@ def load(absolute_path):
         for entry in db: 
                 if entry.is_dir():
                         #look at sequences here
-                        sequences_path = path + entry.name + "/tree_sequences"
+                        sequences_path = path + entry.name + "/edited_tree_sequences"
                         sequences_folder = os.scandir(sequences_path)
                         for sequences in sequences_folder:
                                 clustalomega_alignment(entry.name, sequences.name[:-6])
