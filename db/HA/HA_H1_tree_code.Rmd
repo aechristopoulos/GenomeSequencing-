@@ -1,0 +1,68 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
+
+Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Ctrl+Shift+Enter*. 
+
+```{r}
+library(ape)
+library(phangorn)
+library(seqinr)
+library("Biostrings")
+library("ggplot2")
+library("ggtree")
+```
+
+```{r}
+HA_H1 <- read.dna("HA/tree_alignments/HA_H1_edited_NCR_alignment.fasta", format = "fasta")
+HA_H1_phyDat <- phyDat(HA_H1, type = "DNA", levels =NULL)
+```
+
+```{r}
+mt <- modelTest(HA_H1_phyDat)
+#print(mt)
+min(mt[4])
+#TPM1u+G(4)+I 
+```
+
+```{r}
+dna_dist <- dist.ml(HA_H1_phyDat, model = "JC69")
+```
+
+```{r}
+HA_H1_UPGMA <- upgma(dna_dist)
+HA_H1_NJ <- NJ(dna_dist)
+plot(HA_H1_UPGMA, main = "UPGMA")
+plot(HA_H1_NJ, main = "Neighbor Joining")
+```
+
+```{r}
+#parsimony(HA_H1_UPGMA, data = HA_H1_phyDat)
+#parsimony(HA_H1_NJ, data = HA_H1_phyDat)
+#UPGMA = 831, NJ = 759 <-
+
+HA_H1_optim <- optim.parsimony(HA_H1_NJ, HA_H1_phyDat)
+HA_H1_pratchet <- pratchet(HA_H1_phyDat)
+plot(HA_H1_optim, main = "Optimum")
+plot(HA_H1_pratchet, main = "pratchet")
+
+```
+
+```{r}
+fit <- pml(HA_H1_NJ, HA_H1_phyDat)
+print(fit)
+fitJC <- optim.pml(fit, model = "JC", rearrangement = "stochastic")
+logLik(fitJC)
+bs <- bootstrap.pml(fitJC, bs =100, optNni=TRUE, multicore=TRUE, control = pml.control(trace=0))
+plotBS(midpoint(fitJC$tree), bs, p = 50, type="p")
+```
+
+```{r}
+write.tree(bs, file = "HA/HA_H1_tree.tree")
+```
+
+
+
