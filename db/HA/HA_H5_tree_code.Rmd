@@ -1,0 +1,80 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+
+
+```{r}
+library("ape")
+library("phangorn")
+library("seqinr")
+library("Biostrings")
+library("ggplot2")
+library("ggtree")
+```
+
+
+```{r}
+HA_H5 <- read.dna("tree_alignments/HA_H5_edited_NCR_alignment.fasta", format = "fasta")
+HA_H5_phyDat <- phyDat(HA_H5, type = "DNA", levels =NULL)
+```
+
+```{r}
+mt <- modelTest(HA_H5_phyDat)
+print(mt)
+min(mt[4])
+#GRT+G
+```
+
+```{r}
+dna_dist <- dist.ml(HA_H5_phyDat, model = "JC69")
+```
+
+
+```{r}
+HA_H5_UPGMA <- upgma(dna_dist)
+HA_H5_NJ <- NJ(dna_dist)
+plot(HA_H5_UPGMA, main = "UPGMA")
+plot(HA_H5_NJ, main = "Neighbor Joining")
+```
+
+
+```{r}
+parsimony(HA_H5_UPGMA, data = HA_H5_phyDat)
+parsimony(HA_H5_NJ, data = HA_H5_phyDat)
+#UPGMA = 316, NJ = 295 <-
+```
+
+
+```{r}
+HA_H5_optim <- optim.parsimony(HA_H5_NJ, HA_H5_phyDat)
+HA_H5_pratchet <- pratchet(HA_H5_phyDat)
+plot(HA_H5_optim, main = "Optimum")
+plot(HA_H5_pratchet, main = "pratchet")
+
+```
+
+```{r}
+fit <- pml(HA_H5_NJ, HA_H5_phyDat)
+print(fit)
+fitJC <- optim.pml(fit, model = "JC", rearrangement = "stochastic")
+logLik(fitJC)
+bs <- bootstrap.pml(fitJC, bs =100, optNni=TRUE, multicore=TRUE, control = pml.control(trace=0))
+plotBS(midpoint(fitJC$tree), bs, p = 50, type="p")
+```
+
+```{r}
+write.tree(bs, file = "trees/HA_H5_10_tree.nwk")
+```
+
+
+```{r}
+tree <- read.tree(file = "trees/HA_H5_10_tree.nwk")
+```
+
+
+```{r}
+ggtree(tree)
+```
+

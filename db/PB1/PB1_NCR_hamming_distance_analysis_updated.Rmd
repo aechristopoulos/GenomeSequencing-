@@ -195,7 +195,7 @@ PB1_H7_R <- read.csv("hamming_distance_results/PB1_H7_PB1_Reverse_2.4_results_NC
 
 PB1_H7_2 <- PB1_H7_R[-c(54),]
 
-barplot(table(PB1_H7_2$hamming_distance), main = "PB1 H7N9 hamming distances, forward primer", xlab = "Hamming Distance", ylab = "Number of Sequences", ylim = c(0,60))
+barplot(table(PB1_H7_2$hamming_distance), main = "PB1 H7N9 hamming distances, reverse primer", xlab = "Hamming Distance", ylab = "Number of Sequences", ylim = c(0,60))
 ```
 
 **PB1 Reverse 2.4 primer**: *CGA T***AG TAG AAA CAA GG**C ATT TTT TCA TGA AGG 

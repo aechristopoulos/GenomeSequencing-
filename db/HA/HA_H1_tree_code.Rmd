@@ -17,19 +17,20 @@ library("ggtree")
 ```
 
 ```{r}
-HA_H1 <- read.dna("HA/tree_alignments/HA_H1_edited_NCR_alignment.fasta", format = "fasta")
+HA_H1 <- read.dna("tree_alignments/HA_H1_edited_NCR_alignment.fasta", format = "fasta")
 HA_H1_phyDat <- phyDat(HA_H1, type = "DNA", levels =NULL)
+HA_H1_10 <- subset(HA_H1_phyDat, 1:10)
 ```
 
 ```{r}
-mt <- modelTest(HA_H1_phyDat)
+mt <- modelTest(HA_H1_10)
 #print(mt)
 min(mt[4])
 #TPM1u+G(4)+I 
 ```
 
 ```{r}
-dna_dist <- dist.ml(HA_H1_phyDat, model = "JC69")
+dna_dist <- dist.ml(HA_H1_10, model = "JC69")
 ```
 
 ```{r}
@@ -40,11 +41,11 @@ plot(HA_H1_NJ, main = "Neighbor Joining")
 ```
 
 ```{r}
-#parsimony(HA_H1_UPGMA, data = HA_H1_phyDat)
-#parsimony(HA_H1_NJ, data = HA_H1_phyDat)
+parsimony(HA_H1_UPGMA, data = HA_H1_10)
+parsimony(HA_H1_NJ, data = HA_H1_10)
 #UPGMA = 831, NJ = 759 <-
 
-HA_H1_optim <- optim.parsimony(HA_H1_NJ, HA_H1_phyDat)
+HA_H1_optim <- optim.parsimony(HA_H1_NJ, HA_H1_10)
 HA_H1_pratchet <- pratchet(HA_H1_phyDat)
 plot(HA_H1_optim, main = "Optimum")
 plot(HA_H1_pratchet, main = "pratchet")
@@ -52,7 +53,7 @@ plot(HA_H1_pratchet, main = "pratchet")
 ```
 
 ```{r}
-fit <- pml(HA_H1_NJ, HA_H1_phyDat)
+fit <- pml(HA_H1_NJ, HA_H1_10)
 print(fit)
 fitJC <- optim.pml(fit, model = "JC", rearrangement = "stochastic")
 logLik(fitJC)
@@ -61,8 +62,16 @@ plotBS(midpoint(fitJC$tree), bs, p = 50, type="p")
 ```
 
 ```{r}
-write.tree(bs, file = "HA/HA_H1_tree.tree")
+write.tree(bs, file = "trees/HA_H1_10_tree.nwk")
 ```
 
 
+```{r}
+tree <- read.tree(file = "trees/HA_H1_10_tree.nwk")
+```
+
+
+```{r}
+ggtree(tree)
+```
 

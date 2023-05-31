@@ -6,25 +6,25 @@ from Bio import AlignIO
 from Bio.Phylo.Applications import PhymlCommandline
 from Bio.Phylo import PhyloXML
 
-# Read the sequences and align
-align = AlignIO.read("db/HA/tree_alignments/HA_H1_edited_NCR_alignment.fasta", "fasta")
+# # Read the sequences and align
+# align = AlignIO.read("db/HA/tree_alignments/HA_H1_edited_NCR_alignment.fasta", "fasta")
 
-# Calculate the distance matrix
-calculator = DistanceCalculator('identity')
-distMatrix = calculator.get_distance(align)
+# # Calculate the distance matrix
+# calculator = DistanceCalculator('identity')
+# distMatrix = calculator.get_distance(align)
 
-# Creating a DistanceTreeConstructor object
-constructor = DistanceTreeConstructor()
+# # Creating a DistanceTreeConstructor object
+# constructor = DistanceTreeConstructor()
 
-# Construct the phlyogenetic tree using UPGMA algorithm
-UPGMATree = constructor.upgma(distMatrix)
+# # Construct the phlyogenetic tree using UPGMA algorithm
+# UPGMATree = constructor.upgma(distMatrix)
 
 
-# Draw the phlyogenetic tree
-Phylo.draw(UPGMATree)
+# # Draw the phlyogenetic tree
+# Phylo.draw(UPGMATree)
 
-# Printing the phlyogenetic tree using terminal
-Phylo.draw_ascii(UPGMATree)
+# # Printing the phlyogenetic tree using terminal
+# Phylo.draw_ascii(UPGMATree)
 
 
 
@@ -43,3 +43,8 @@ Phylo.draw_ascii(UPGMATree)
 
 # cmdline = PhymlCommandline(input="db/HA/relaxed_phylip_files/HA_H1_NCR.phy", datatype="nt", model="HKY85", alpha="e", bootstrap=100)
 # out_log, err_log = cmdline()
+
+
+tree = Phylo.parse("db/HA/trees/HA_H5_tree.nwk", "newick")
+
+Phylo.draw(tree)

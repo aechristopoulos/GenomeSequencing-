@@ -143,7 +143,7 @@ PA_H3_R <- read.csv("hamming_distance_results/PA_H3_PA_Reverse_2.7_results_NCR.c
 
 PA_H3_3 <- PA_H3_R[-c(4984),]
 
-barplot(table(PA_H3_3$hamming_distance), main = "PA H3NX hamming distances, forward 1.7 primer", xlab = "Hamming Distance", ylab = "Number of Sequences", ylim = c(0,5000))
+barplot(table(PA_H3_3$hamming_distance), main = "PA H3NX hamming distances, reverse primer", xlab = "Hamming Distance", ylab = "Number of Sequences", ylim = c(0,5000))
 ```
 
 **PA Reverse 2.7 primer**: *AGT GGC AT***A GTA GAA ACA AGG** TAC TTT TTT 
@@ -360,7 +360,7 @@ PA_H9_R <- read.csv("hamming_distance_results/PA_H9_PA_Reverse_2.7_results_NCR.c
 
 PA_H9_3 <- PA_H9_R[-c(8),]
 
-barplot(table(PA_H9_3$hamming_distance), main = "PA H9N2 hamming distances, forward 1.7 primer", xlab = "Hamming Distance", ylab = "Number of Sequences", ylim = c(0,10))
+barplot(table(PA_H9_3$hamming_distance), main = "PA H9N2 hamming distances, reverse primer", xlab = "Hamming Distance", ylab = "Number of Sequences", ylim = c(0,10))
 ```
 
 **PA Reverse 2.7 primer**: *AGT GGC AT***A GTA GAA ACA AGG** TAC TTT TTT 
