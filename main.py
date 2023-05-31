@@ -13,8 +13,8 @@ from ETLs.tree_alignments.tree_alignment_main import tree_alignment_main
 
 def main():
     #align(absolute_path)
-    # hamming_distance_main(absolute_path)
-    tree_alignment_main(absolute_path)
+    hamming_distance_main(absolute_path)
+    #tree_alignment_main(absolute_path)
 
 
 
