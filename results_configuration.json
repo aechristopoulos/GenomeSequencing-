@@ -1,0 +1,178 @@
+{
+    "MP": {
+        "H1": {
+            "forward_version": "1.4", 
+            "reverse_version": "2.2"
+        }, 
+        "H3" : {
+            "forward_version" : "1.5", 
+            "reverse_version" : "2.2"
+        }, 
+        "H5" : {
+            "forward_version" : "1.5", 
+            "reverse_version" : "2.2"
+        }, 
+        "H7" : {
+            "forward_version" : "1.4", 
+            "reverse_version" : "2.2"
+        },
+        "H9" : {
+            "forward_version" : "1.4", 
+            "reverse_version" : "2.2"
+        }
+    },
+    "HA": {
+        "H1": {
+            "forward_version": "1.13", 
+            "reverse_version": "2.7"
+        },
+        "H3" : {
+            "forward_version" : "1.13", 
+            "reverse_version" : "2.7"
+        },
+        "H5" : {
+            "forward_version" : "1.13", 
+            "reverse_version" : "2.7"
+        },
+        "H7" : {
+            "forward_version" : "1.13", 
+            "reverse_version" : "2.7"
+        },
+        "H9" : {
+            "forward_version" : "1.13", 
+            "reverse_version" : "2.7"
+        }
+    }, 
+    "NA": {
+        "H1": {
+            "forward_version": "1.3", 
+            "reverse_version": "2.2"
+        },
+        "H3" : {
+            "forward_version" : "1.3", 
+            "reverse_version" : "2.2"
+        },
+        "H5" : {
+            "forward_version" : "1.4", 
+            "reverse_version" : "2.3"
+        },
+        "H7" : {
+            "forward_version" : "1.4", 
+            "reverse_version" : "2.3"
+        },
+        "H9" : {
+            "forward_version" : "1.3", 
+            "reverse_version" : "2.2"
+        }
+    },
+    "NP": {
+        "H1": {
+            "forward_version": "1.6", 
+            "reverse_version": "2.5"
+        },
+        "H3" : {
+            "forward_version" : "1.8", 
+            "reverse_version" : "2.5"
+        },
+        "H5" : {
+            "forward_version" : "1.6", 
+            "reverse_version" : "2.5"
+        },
+        "H7" : {
+            "forward_version" : "1.6", 
+            "reverse_version" : "2.5"
+        },
+        "H9" : {
+            "forward_version" : "1.6", 
+            "reverse_version" : "2.5"
+        }
+    },
+    "NS": {
+        "H1": {
+            "forward_version": "1.4", 
+            "reverse_version": "2.2"
+        },
+        "H3" : {
+            "forward_version" : "1.4", 
+            "reverse_version" : "2.2"
+        },
+        "H5" : {
+            "forward_version" : "1.4", 
+            "reverse_version" : "2.2"
+        },
+        "H7" : {
+            "forward_version" : "1.4", 
+            "reverse_version" : "2.2"
+        },
+        "H9" : {
+            "forward_version" : "1.4", 
+            "reverse_version" : "2.2"
+        }
+    },
+    "PA": {
+        "H1": {
+            "forward_version": "1.5", 
+            "reverse_version": "2.7"
+        },
+        "H3" : {
+            "forward_version" : "1.6", 
+            "reverse_version" : "2.7"
+        },
+        "H5" : {
+            "forward_version" : "1.6", 
+            "reverse_version" : "2.7"
+        },
+        "H7" : {
+            "forward_version" : "1.5", 
+            "reverse_version" : "2.7"
+        },
+        "H9" : {
+            "forward_version" : "1.5", 
+            "reverse_version" : "2.7"
+        }
+    },
+    "PB1": {
+        "H1": {
+            "forward_version": "1.3", 
+            "reverse_version": "2.4"
+        },
+        "H3" : {
+            "forward_version" : "1.3", 
+            "reverse_version" : "2.4"
+        },
+        "H5" : {
+            "forward_version" : "1.3", 
+            "reverse_version" : "2.4"
+        },
+        "H7" : {
+            "forward_version" : "1.3", 
+            "reverse_version" : "2.4"
+        },
+        "H9" : {
+            "forward_version" : "1.3", 
+            "reverse_version" : "2.4"
+        }
+    },
+    "PB2": {
+        "H1": {
+            "forward_version": "1.2", 
+            "reverse_version": "2.4"
+        },
+        "H3" : {
+            "forward_version" : "1.3", 
+            "reverse_version" : "2.4"
+        },
+        "H5" : {
+            "forward_version" : "1.2", 
+            "reverse_version" : "2.4"
+        },
+        "H7" : {
+            "forward_version" : "1.2", 
+            "reverse_version" : "2.4"
+        },
+        "H9" : {
+            "forward_version" : "1.2", 
+            "reverse_version" : "2.4"
+        }
+    }
+}
